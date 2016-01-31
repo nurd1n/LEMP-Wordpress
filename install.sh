@@ -1,4 +1,5 @@
 cd /
+clear
 echo -n "Apa nama domain anda (tanpa dot com) :
 "
 read domain
