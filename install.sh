@@ -55,7 +55,8 @@ sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
 sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php5/fpm/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/fpm/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php5/fpm/php.ini
-echo "curl https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block | sed 's/domain/$(cat deletedomain)/g' > /etc/nginx/sites-available/$(cat deletedomain)" | bash -
+wget https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block --no-check-certificate
+echo "cat block | sed 's/domain/$(cat deletedomain)/g' > /etc/nginx/sites-available/$(cat deletedomain)" | bash -
 echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain) /etc/nginx/sites-enabled/$(cat deletedomain)" | bash -
 echo "mkdir -p /home/$(cat deletedomain)/wordpress" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart
@@ -66,12 +67,12 @@ chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 wp --info --allow-root
 # Install Wordpress and Configure the Database
-echo "cd /home/$(cat deletedomain)/wordpress/" | bash -
+echo "cd /home/$(cat /deletedomain)/wordpress/" | bash -
 # Install wordpress terbaru
 wp core download --version=4.4.1 --allow-root
 chown -R www-data:www-data *
 # Create database, ganti password, wordpressdb
-echo "echo \"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
+echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
 echo "wp core config --dbname=wp_$(cat /deletedomain) --dbuser=$(cat /deleteuserdb) --dbpass=$(cat /deletepassdb) --allow-root" | bash -
 echo "define( 'UPLOADS', ''.'image' );" >> wp-config.php
 echo "wp core install --url=www.$(cat /deletedomain).com --title=$(cat /deletedomain) --admin_user=$(cat /deleteuserwp) --admin_password=$(cat /deletepasswp) --admin_email=$(cat /deleteemailwp) --allow-root" | bash -
@@ -122,18 +123,18 @@ wp plugin install http://moviestreamfullhd.com/plugin/wp-rocket.zip --activate  
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
 # tambah user
-echo "milley;$(wp user create milley milley@domain.com --role=author --display_name=Milley --user_pass=GhfrTDuy%67g^$*34 --porcelain --allow-root)" > /home/domain/user.txt
-echo "martha;$(wp user create martha martha@domain.com --role=author --display_name=Martha --user_pass=GhfrTDuy%67g^$*35 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "edward;$(wp user create edward edward@domain.com --role=author --display_name=Edward --user_pass=GhfrTDuy%67g^$*36 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "samuel;$(wp user create samuel samuel@domain.com --role=author --display_name=Samuel --user_pass=GhfrTDuy%67g^$*37 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "daniel;$(wp user create daniel daniel@domain.com --role=author --display_name=Daniel --user_pass=GhfrTDuy%67g^$*38 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "cason;$(wp user create cason cason@domain.com --role=author --display_name=Cason --user_pass=GhfrTDuy%67g^$*39 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "vandiver;$(wp user create vandiver vandiver@domain.com --role=author --display_name=Vandiver --user_pass=GhfrTDuy%67g^$*40 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "teresa;$(wp user create teresa teresa@domain.com --role=author --display_name=Teresa --user_pass=GhfrTDuy%67g^$*41 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "collins;$(wp user create collins collins@domain.com --role=author --display_name=Collins --user_pass=GhfrTDuy%67g^$*42 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "carole;$(wp user create carole carole@domain.com --role=author --display_name=Carole --user_pass=GhfrTDuy%67g^$*43 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "tomlin;$(wp user create tomlin tomlin@domain.com --role=author --display_name=Tomlin --user_pass=GhfrTDuy%67g^$*44 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "sharoon;$(wp user create sharoon sharoon@domain.com --role=author --display_name=Sharoon --user_pass=GhfrTDuy%67g^$*45 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "issac;$(wp user create issac issac@domain.com --role=author --display_name=Issac --user_pass=GhfrTDuy%67g^$*46 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "samantha;$(wp user create samantha samantha@domain.com --role=author --display_name=Samantha --user_pass=GhfrTDuy%67g^$*47 --porcelain --allow-root)" >> /home/domain/user.txt
-echo "turner;$(wp user create turner turner@domain.com --role=author --display_name=Turner --user_pass=GhfrTDuy%67g^$*48 --porcelain --allow-root)" >> /home/domain/user.txt
+echo "milley;$(wp user create milley milley@domain.com --role=author --display_name=Milley --user_pass=GhfrTDuy%67g^$*34 --porcelain --allow-root)" > /home/user.txt
+echo "martha;$(wp user create martha martha@domain.com --role=author --display_name=Martha --user_pass=GhfrTDuy%67g^$*35 --porcelain --allow-root)" >> /home/user.txt
+echo "edward;$(wp user create edward edward@domain.com --role=author --display_name=Edward --user_pass=GhfrTDuy%67g^$*36 --porcelain --allow-root)" >> /home/user.txt
+echo "samuel;$(wp user create samuel samuel@domain.com --role=author --display_name=Samuel --user_pass=GhfrTDuy%67g^$*37 --porcelain --allow-root)" >> /home/user.txt
+echo "daniel;$(wp user create daniel daniel@domain.com --role=author --display_name=Daniel --user_pass=GhfrTDuy%67g^$*38 --porcelain --allow-root)" >> /home/user.txt
+echo "cason;$(wp user create cason cason@domain.com --role=author --display_name=Cason --user_pass=GhfrTDuy%67g^$*39 --porcelain --allow-root)" >> /home/user.txt
+echo "vandiver;$(wp user create vandiver vandiver@domain.com --role=author --display_name=Vandiver --user_pass=GhfrTDuy%67g^$*40 --porcelain --allow-root)" >> /home/user.txt
+echo "teresa;$(wp user create teresa teresa@domain.com --role=author --display_name=Teresa --user_pass=GhfrTDuy%67g^$*41 --porcelain --allow-root)" >> /home/user.txt
+echo "collins;$(wp user create collins collins@domain.com --role=author --display_name=Collins --user_pass=GhfrTDuy%67g^$*42 --porcelain --allow-root)" >> /home/user.txt
+echo "carole;$(wp user create carole carole@domain.com --role=author --display_name=Carole --user_pass=GhfrTDuy%67g^$*43 --porcelain --allow-root)" >> /home/user.txt
+echo "tomlin;$(wp user create tomlin tomlin@domain.com --role=author --display_name=Tomlin --user_pass=GhfrTDuy%67g^$*44 --porcelain --allow-root)" >> /home/user.txt
+echo "sharoon;$(wp user create sharoon sharoon@domain.com --role=author --display_name=Sharoon --user_pass=GhfrTDuy%67g^$*45 --porcelain --allow-root)" >> /home/user.txt
+echo "issac;$(wp user create issac issac@domain.com --role=author --display_name=Issac --user_pass=GhfrTDuy%67g^$*46 --porcelain --allow-root)" >> /home/user.txt
+echo "samantha;$(wp user create samantha samantha@domain.com --role=author --display_name=Samantha --user_pass=GhfrTDuy%67g^$*47 --porcelain --allow-root)" >> /home/user.txt
+echo "turner;$(wp user create turner turner@domain.com --role=author --display_name=Turner --user_pass=GhfrTDuy%67g^$*48 --porcelain --allow-root)" >> /home/user.txt
