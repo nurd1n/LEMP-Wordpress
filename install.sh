@@ -68,7 +68,7 @@ chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 wp --info --allow-root
 # Install Wordpress and Configure the Database
-echo "cd /home/$(cat /deletedomain)/wordpress/" | bash -
+eval $(echo "cd /home/$(cat /deletedomain)/wordpress/")
 # Install wordpress terbaru
 wp core download --version=4.4.1 --allow-root
 chown -R www-data:www-data *
