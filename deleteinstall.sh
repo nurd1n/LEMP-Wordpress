@@ -132,7 +132,7 @@ chown -R www-data:www-data *
 wp plugin update --all --allow-root
 #langkahvps
 mkdir -p /home/wallpaper/url/report/backup
-mkdir -p /home/wallpaper/image/done/image
+mkdir -p /home/wallpaper/image/done/{image,video}
 mkdir -p /home/wallpaper/artikel/{data,file,spin,template}
 mkdir -p /home/wallpaper/artikel/spin/{par1,par2,par3,par4,par5}
 mkdir -p /home/wallpaper/artikel/spin/par1/{1,2,3,4,5}
