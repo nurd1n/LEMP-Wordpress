@@ -362,4 +362,5 @@ cp /home/wallpaper/artikel/data/author.txt /home/wallpaper/attachment/data/autho
 #download file yg dibutuhkan
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /root/Downloads/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /root/Downloads/wpallimport.txt
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /root/Downloads/wordpressping.txt
 chown -R www-data:www-data *
