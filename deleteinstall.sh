@@ -361,4 +361,5 @@ echo "turner" >> /home/wallpaper/artikel/data/author.txt
 cp /home/wallpaper/artikel/data/author.txt /home/wallpaper/attachment/data/author.txt
 #download file yg dibutuhkan
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /root/Downloads/aiopluginsetting.ini
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /root/Downloads/wpallimport.txt
 chown -R www-data:www-data *
