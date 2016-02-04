@@ -162,6 +162,7 @@ wget https://github.com/nurd1n/Wallpaper-Script/raw/image/b.sh --no-check-certif
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/c.sh --no-check-certificate --directory-prefix=/home/wallpaper/image/done
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/isifolder.sh --no-check-certificate --directory-prefix=/home/wallpaper/image/done
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/start6.sh --no-check-certificate --directory-prefix=/home/wallpaper/image/done
+curl -L http://moviestreamfullhd.com/images/white.jpg -o /home/wallpaper/image/done/video/white.jpg
 #artikel folder
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/a.html | sed 's/domain/$(cat /deletedomain)/g'" | bash - > /home/wallpaper/artikel/a.html
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/b.html | sed 's/domain/$(cat /deletedomain)/g'" | bash - > /home/wallpaper/artikel/b.html
