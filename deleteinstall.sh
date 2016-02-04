@@ -359,4 +359,6 @@ echo "samantha" >> /home/wallpaper/artikel/data/author.txt
 echo "turner;$(wp user create turner turner@domain.com --role=author --display_name=Turner --user_pass=GhfrTDuy%67g^$*48 --porcelain --allow-root)" >> /home/user.txt
 echo "turner" >> /home/wallpaper/artikel/data/author.txt
 cp /home/wallpaper/artikel/data/author.txt /home/wallpaper/attachment/data/author.txt
+#download file yg dibutuhkan
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /root/Downloads/aiopluginsetting.ini
 chown -R www-data:www-data *
