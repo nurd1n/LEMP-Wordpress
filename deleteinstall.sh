@@ -51,7 +51,14 @@ sudo add-apt-repository 'deb http://mirrors.coreix.net/mariadb/repo/10.0/ubuntu 
 sudo apt-get update
 sudo apt-get install mariadb-server
 mysql_secure_installation
-sudo apt-get install nginx mariadb-client php5 php5-fpm php5-mysql php5-gd curl libcurl3 php5-curl at sendmail ffmpeg midori bleachbit gedit terminator filezilla libimage-exiftool-perl unzip
+sudo apt-get install nginx mariadb-client php5 php5-fpm php5-mysql php5-gd curl libcurl3 php5-curl at sendmail ffmpeg midori bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip
+pip install --upgrade google-api-python-client
+pip install --upgrade google-api-python-client progressbar2
+wget https://github.com/tokland/youtube-upload/archive/master.zip
+unzip master.zip
+cd youtube-upload-master
+sudo python setup.py install
+cd /
 sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
 sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php5/fpm/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/fpm/php.ini
