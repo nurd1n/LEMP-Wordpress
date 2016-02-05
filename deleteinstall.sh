@@ -372,3 +372,4 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /root/Downloads/wpallimport.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /root/Downloads/wordpressping.txt
 chown -R www-data:www-data *
+chmod 777 /home/domain/wordpress
