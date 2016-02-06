@@ -4,6 +4,10 @@ echo -n "Apa nama domain anda (tanpa dot com) :
 "
 read domain
 echo "$domain" > deletedomain; clear
+echo -n "Apa nama ekstension domain anda (com, net, org, xyz, dll) :
+"
+read ekstension
+echo "$ekstension" > deleteekstension; clear
 echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
 "
 read passmysql
@@ -64,7 +68,7 @@ sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php5/fpm/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/fpm/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php5/fpm/php.ini
 wget https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block --no-check-certificate
-echo "cat block | sed 's/domain/$(cat deletedomain)/g' > /etc/nginx/sites-available/$(cat deletedomain)" | bash -
+echo "cat block | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' > /etc/nginx/sites-available/$(cat deletedomain)" | bash -
 echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain) /etc/nginx/sites-enabled/$(cat deletedomain)" | bash -
 echo "mkdir -p /home/$(cat deletedomain)/wordpress" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart
@@ -83,7 +87,7 @@ chown -R www-data:www-data *
 echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
 echo "wp core config --dbname=wp_$(cat /deletedomain) --dbuser=$(cat /deleteuserdb) --dbpass=$(cat /deletepassdb) --allow-root" | bash -
 echo "define( 'UPLOADS', ''.'image' );" >> wp-config.php
-echo "wp core install --url=www.$(cat /deletedomain).xyz --title=$(cat /deletedomain) --admin_user=$(cat /deleteuserwp) --admin_password=$(cat /deletepasswp) --admin_email=$(cat /deleteemailwp) --allow-root" | bash -
+echo "wp core install --url=www.$(cat /deletedomain).$(cat /deleteekstension) --title=$(cat /deletedomain) --admin_user=$(cat /deleteuserwp) --admin_password=$(cat /deletepasswp) --admin_email=$(cat /deleteemailwp) --allow-root" | bash -
 #delete all spam comments.
 wp comment delete $(wp comment list --status=spam --allow-root) --force --allow-root
 #delete all approved comments.
