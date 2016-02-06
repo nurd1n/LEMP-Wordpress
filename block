@@ -6,7 +6,7 @@ server {
 
     index index.php index.html index.htm index.nginx-debian.html;
 
-    server_name www.domain.xyz domain.xyz;
+    server_name www.domain.ekstension domain.ekstension;
 
     location / {
         try_files $uri $uri/ /index.php?q=$uri&$args;
