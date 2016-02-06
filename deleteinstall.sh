@@ -168,13 +168,13 @@ wget https://github.com/nurd1n/Wallpaper-Script/raw/image/isifolder.sh --no-chec
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/start6.sh --no-check-certificate --directory-prefix=/home/wallpaper/image/done
 curl -L http://moviestreamfullhd.com/images/white.jpg -o /home/wallpaper/image/done/video/white.jpg
 #artikel folder
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/a.html | sed 's/domain/$(cat /deletedomain)/g'" | bash - > /home/wallpaper/artikel/a.html
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/b.html | sed 's/domain/$(cat /deletedomain)/g'" | bash - > /home/wallpaper/artikel/b.html
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/a.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/wallpaper/artikel/a.html
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/b.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/wallpaper/artikel/b.html
 wget https://github.com/nurd1n/Wallpaper-Script/raw/artikel/ask.py --no-check-certificate --directory-prefix=/home/wallpaper/artikel
 wget https://github.com/nurd1n/Wallpaper-Script/raw/artikel/start7.sh --no-check-certificate --directory-prefix=/home/wallpaper/artikel
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/build.sh | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/artikel/build.sh" | bash -
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/start8.sh | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/artikel/start8.sh" | bash -
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/start9.sh | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/artikel/start9.sh" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/build.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/artikel/build.sh" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/start8.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/artikel/start8.sh" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/start9.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/artikel/start9.sh" | bash -
 touch /home/wallpaper/artikel/data/category.txt
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/spin111 -o /home/wallpaper/artikel/spin/par1/1/1
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/spin112 -o /home/wallpaper/artikel/spin/par1/1/2
@@ -308,8 +308,8 @@ curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template4 -o /hom
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template5 -o /home/wallpaper/artikel/template/5
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template6 -o /home/wallpaper/artikel/template/6
 #folder attachment
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/sitemap | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/attachment/data/sitemap" | bash -
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/sql1 | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/attachment/data/sql1" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/sitemap | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/data/sitemap" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/sql1 | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/data/sql1" | bash -
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/sql2 -o /home/wallpaper/attachment/data/sql2
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin11 -o /home/wallpaper/attachment/spin/par1/1
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin12 -o /home/wallpaper/attachment/spin/par1/2
@@ -319,7 +319,7 @@ curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin15 -o /hom
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin21 -o /home/wallpaper/attachment/spin/par2/1
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin22 -o /home/wallpaper/attachment/spin/par2/2
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin23 -o /home/wallpaper/attachment/spin/par2/3
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin31 -o /home/wallpaper/attachment/spin/par3/1
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin31 | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/spin/par3/1" | bash -
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin32 -o /home/wallpaper/attachment/spin/par3/2
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/tanggal -o /home/wallpaper/attachment/spin/tanggal
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template1 -o /home/wallpaper/attachment/template/1
@@ -327,12 +327,12 @@ curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template2 -o /
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template3 -o /home/wallpaper/attachment/template/3
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/start10.sh -o /home/wallpaper/attachment/start10.sh
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/ask.py -o /home/wallpaper/attachment/ask.py
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/a.html | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/attachment/a.html" | bash -
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/b.html | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/attachment/b.html" | bash -
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/build.sh | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/attachment/build.sh" | bash -
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/start11.sh | sed 's/domain/$(cat /deletedomain)/g' > /home/wallpaper/attachment/start11.sh" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/a.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/a.html" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/b.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/b.html" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/build.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/build.sh" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/start11.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/start11.sh" | bash -
 #robots.txt
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/robots.txt | sed 's/domain/$(cat /deletedomain)/g' > /home/$(cat /deletedomain)/wordpress/robots.txt" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/robots.txt | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/$(cat /deletedomain)/wordpress/robots.txt" | bash -
 chmod 755 /home/wallpaper/url/*.sh
 chmod 755 /home/wallpaper/url/report/*.sh
 chmod 755 /home/wallpaper/image/*.sh
@@ -371,9 +371,10 @@ echo "samantha" >> /home/wallpaper/artikel/data/author.txt
 echo "turner;$(wp user create turner turner@domain.com --role=author --display_name=Turner --user_pass=GhfrTDuy%67g^$*48 --porcelain --allow-root)" >> /home/user.txt
 echo "turner" >> /home/wallpaper/artikel/data/author.txt
 cp /home/wallpaper/artikel/data/author.txt /home/wallpaper/attachment/data/author.txt
+chown -R www-data:www-data *
+chmod 777 /home/domain/wordpress
+cd /root/Downloads
 #download file yg dibutuhkan
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /root/Downloads/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /root/Downloads/wpallimport.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /root/Downloads/wordpressping.txt
-chown -R www-data:www-data *
-chmod 777 /home/domain/wordpress
