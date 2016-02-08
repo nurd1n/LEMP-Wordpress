@@ -2,7 +2,7 @@ server {
     listen 80;
 
     #Web Directory
-    root /home/domain/wordpress;
+    root /home/www/domain;
 
     index index.php index.html index.htm index.nginx-debian.html;
 
