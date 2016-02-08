@@ -34,8 +34,7 @@ read emailwp
 echo "$emailwp" > deleteemailwp; clear
 #install x2go
 apt-get update && apt-get -y install aptitude
-apt-get install gawk
-apt-get install python-setuptools
+apt-get install gawk python-setuptools software-properties-common
 echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
 echo "deb-src http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
 apt-key adv --recv-keys --keyserver keys.gnupg.net E1F958385BFE2B6E
@@ -45,19 +44,31 @@ apt-get dist-upgrade
 aptitude update && aptitude install x2go-keyring
 aptitude install x2goserver
 apt-get install xorg lxde-core
-#install mechanize & beautifulsoup
-easy_install mechanize
-easy_install BeautifulSoup4
+#install nginx
+sudo -s
+nginx=stable
+add-apt-repository ppa:nginx/$nginx
+apt-get update
+apt-get install nginx-extras
+#install php5-fpm
+apt-get update
+apt-get install php5 php5-mysql php5-mcrypt php5-gd php5-fpm curl libcurl3 php5-curl
 #install mariadb
-sudo apt-get install software-properties-common
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 sudo add-apt-repository 'deb http://mirrors.coreix.net/mariadb/repo/10.0/ubuntu vivid main'
 sudo apt-get update
-sudo apt-get install mariadb-server
+sudo apt-get install mariadb-server mariadb-client
+service mysql restart
 mysql_secure_installation
-sudo apt-get install nginx mariadb-client php5 php5-fpm php5-mysql php5-gd curl libcurl3 php5-curl at sendmail ffmpeg midori bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip
+#install yg diperlukan
+sudo apt-get install at sendmail ffmpeg midori bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip
+#install mechanize & beautifulsoup
+easy_install mechanize
+easy_install BeautifulSoup4
+#install google-api-python-client dan progressbar2
 pip install --upgrade google-api-python-client
 pip install --upgrade google-api-python-client progressbar2
+#install youtube upload
 wget https://github.com/tokland/youtube-upload/archive/master.zip
 unzip master.zip
 cd youtube-upload-master
