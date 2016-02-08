@@ -79,7 +79,7 @@ sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php5/fpm/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/fpm/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php5/fpm/php.ini
 wget https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block --no-check-certificate
-echo "cat block | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' > /etc/nginx/sites-available/$(cat deletedomain)" | bash -
+echo "cat block | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
 echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain) /etc/nginx/sites-enabled/$(cat deletedomain)" | bash -
 echo "mkdir -p /home/$(cat deletedomain)/wordpress" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart
