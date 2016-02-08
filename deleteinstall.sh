@@ -342,7 +342,7 @@ echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/b.html |
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/build.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/build.sh" | bash -
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/start11.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaper/attachment/start11.sh" | bash -
 #robots.txt
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/robots.txt | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/$(cat /deletedomain)/wordpress/robots.txt" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/robots.txt | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/www/$(cat /deletedomain)/robots.txt" | bash -
 chmod 755 /home/wallpaper/url/*.sh
 chmod 755 /home/wallpaper/url/report/*.sh
 chmod 755 /home/wallpaper/image/*.sh
