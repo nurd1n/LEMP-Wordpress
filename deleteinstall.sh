@@ -116,14 +116,12 @@ wp plugin install advanced-ads --activate --allow-root
 wp plugin install adsense-privacy-policy --activate --allow-root
 wp plugin install udinra-all-image-sitemap --activate --allow-root
 wp plugin install udinra-mobile-sitemap --activate --allow-root
-wp plugin install bwp-google-xml-sitemaps --activate --allow-root
 wp plugin install jetpack --activate --allow-root
 wp plugin install wordpress-ping-optimizer --activate --allow-root
-wp plugin install autoptimize --activate --allow-root
 wp plugin install forget-about-shortcode-buttons --activate --allow-root
 wp plugin install akismet --activate --allow-root
 wp plugin install wp-limit-login-attempts --activate --allow-root
-wp plugin install drafts-scheduler --activate --allow-root
+wp plugin install google-sitemap-generator --activate --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/searchterms-tagging-2.zip --activate  --allow-root
