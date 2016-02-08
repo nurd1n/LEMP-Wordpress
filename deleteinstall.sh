@@ -372,9 +372,8 @@ echo "turner;$(wp user create turner turner@domain.com --role=author --display_n
 echo "turner" >> /home/wallpaper/artikel/data/author.txt
 cp /home/wallpaper/artikel/data/author.txt /home/wallpaper/attachment/data/author.txt
 chown -R www-data:www-data *
-chmod 777 /home/domain/wordpress
-cd /root/Downloads
+echo "chmod 777 /home/$(cat /deletedomain)/wordpress" | bash -
 #download file yg dibutuhkan
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /root/Downloads/aiopluginsetting.ini
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /root/Downloads/wpallimport.txt
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /root/Downloads/wordpressping.txt
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /home/aiopluginsetting.ini
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /home/wordpressping.txt
