@@ -80,8 +80,8 @@ sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/fpm/ph
 sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php5/fpm/php.ini
 wget https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block --no-check-certificate
 echo "cat block | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
-echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain) /etc/nginx/sites-enabled/$(cat deletedomain)" | bash -
-echo "mkdir -p /home/$(cat deletedomain)/wordpress" | bash -
+echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension) /etc/nginx/sites-enabled/$(cat deletedomain).$(cat deleteekstension)" | bash -
+echo "mkdir -p /home/www/$(cat deletedomain)" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart
 # install wp-cli
 cd /tmp
@@ -90,7 +90,7 @@ chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 wp --info --allow-root
 # Install Wordpress and Configure the Database
-eval $(echo "cd /home/$(cat /deletedomain)/wordpress/")
+eval $(echo "cd /home/www/$(cat /deletedomain)")
 # Install wordpress terbaru
 wp core download --version=4.4.1 --allow-root
 chown -R www-data:www-data *
@@ -382,7 +382,7 @@ echo "turner;$(wp user create turner turner@domain.com --role=author --display_n
 echo "turner" >> /home/wallpaper/artikel/data/author.txt
 cp /home/wallpaper/artikel/data/author.txt /home/wallpaper/attachment/data/author.txt
 chown -R www-data:www-data *
-echo "chmod 777 /home/$(cat /deletedomain)/wordpress" | bash -
+echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
 #download file yg dibutuhkan
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /home/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
