@@ -133,6 +133,7 @@ wp plugin install akismet --activate --allow-root
 wp plugin install wp-limit-login-attempts --activate --allow-root
 wp plugin install google-sitemap-generator --allow-root
 wp plugin install nginx-helper --allow-root
+wp plugin install wp-seo-html-sitemap --activate --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/searchterms-tagging-2.zip --allow-root
@@ -145,6 +146,8 @@ wp plugin install http://moviestreamfullhd.com/plugin/agc-spinner.zip  --allow-r
 wp plugin install http://moviestreamfullhd.com/plugin/agk-plugin-non-mp3.zip  --allow-root
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
+#buat page
+wp post create --post_type=page --post_title='Sitemap'  --post_content='[wpseo_html_sitemap]' --post_status='publish' --allow-root
 #langkahvps
 mkdir -p /home/wallpaper/url/report/backup
 mkdir -p /home/wallpaper/image/done/image
