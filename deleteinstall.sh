@@ -124,23 +124,25 @@ wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --a
 #install plugin
 wp plugin install advanced-ads --activate --allow-root
 wp plugin install adsense-privacy-policy --activate --allow-root
-wp plugin install udinra-all-image-sitemap --activate --allow-root
-wp plugin install udinra-mobile-sitemap --activate --allow-root
+wp plugin install udinra-all-image-sitemap --allow-root
+wp plugin install udinra-mobile-sitemap --allow-root
 wp plugin install jetpack --activate --allow-root
 wp plugin install wordpress-ping-optimizer --activate --allow-root
 wp plugin install forget-about-shortcode-buttons --activate --allow-root
 wp plugin install akismet --activate --allow-root
 wp plugin install wp-limit-login-attempts --activate --allow-root
-wp plugin install google-sitemap-generator --activate --allow-root
+wp plugin install google-sitemap-generator --allow-root
 wp plugin install nginx-helper --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/searchterms-tagging-2.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/secure-folder-wp-content-uploads.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/seo-booster-pro.zip --activate  --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/searchterms-tagging-2.zip --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/secure-folder-wp-content-uploads.zip  --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/seo-booster-pro.zip  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/wp-freshstart.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/wp-rocket.zip --activate  --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/wp-rocket.zip  --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/agc-spinner.zip  --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/agk-premium-non-mp3.zip  --allow-root
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
 #langkahvps
@@ -386,3 +388,4 @@ echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /home/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /home/wordpressping.txt
+curl -L http://moviestreamfullhd.com/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
