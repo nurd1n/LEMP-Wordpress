@@ -165,6 +165,7 @@ wget https://github.com/nurd1n/Wallpaper-Script/raw/url/url.sh --no-check-certif
 wget https://github.com/nurd1n/Wallpaper-Script/raw/url/backup.sh --no-check-certificate --directory-prefix=/home/wallpaper/url/report
 wget https://github.com/nurd1n/Wallpaper-Script/raw/url/start2.sh --no-check-certificate --directory-prefix=/home/wallpaper/url/report
 #image folder
+touch /home/wallpaper/image/urlimage.txt
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/a.sh --no-check-certificate --directory-prefix=/home/wallpaper/image
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/bingimage.py --no-check-certificate --directory-prefix=/home/wallpaper/image
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/bingtitle.py --no-check-certificate --directory-prefix=/home/wallpaper/image
