@@ -142,7 +142,7 @@ wp plugin install http://moviestreamfullhd.com/plugin/wp-freshstart.zip --activa
 wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/wp-rocket.zip  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/agc-spinner.zip  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/agk-premium-non-mp3.zip  --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/agk-plugin-non-mp3.zip  --allow-root
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
 #langkahvps
