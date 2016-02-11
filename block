@@ -22,6 +22,22 @@ server {
         fastcgi_pass unix:/var/run/php5-fpm.sock;
     }
 
+    error_page  403  http://example.com/forbidden.html;
+    location /wp-admin {
+	deny    192.168.1.1;
+	allow   ipadress;
+	deny    all;
+    }
+
+    location /wp-admin/admin-ajax.php {
+	allow all;
+    }
+
+    location /wp-login.php {
+	auth_basic "Administrator Login";
+	auth_basic_user_file .htpasswd;
+    }   
+
     #include h5bp/basic.conf;
 
     location ~ /\.ht {
