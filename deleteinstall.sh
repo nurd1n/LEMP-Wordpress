@@ -32,6 +32,8 @@ echo -n "Apa email wordpress yg diinginkan :
 "
 read emailwp
 echo "$emailwp" > deleteemailwp; clear
+#get ip adress
+ifconfig venet0:0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' > deleteipadress.txt
 #install x2go
 apt-get update && apt-get -y install aptitude
 apt-get install gawk python-setuptools software-properties-common
@@ -79,7 +81,7 @@ sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php5/fpm/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/fpm/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php5/fpm/php.ini
 wget https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block --no-check-certificate
-echo "cat block | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
+echo "cat block | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' -e 's/ipadress/$(cat deleteipadress)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
 echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension) /etc/nginx/sites-enabled/$(cat deletedomain).$(cat deleteekstension)" | bash -
 echo "mkdir -p /home/www/$(cat deletedomain)" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart
