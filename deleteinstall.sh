@@ -81,7 +81,7 @@ sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php5/fpm/php.
 wget https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block --no-check-certificate
 #get ip adress
 ifconfig venet0:0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' > deleteipadress
-echo "cat block | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' -e 's/ipadress/$(cat deleteipadress)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
+echo "cat deleteblock | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' -e 's/ipadress/$(cat deleteipadress)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
 echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension) /etc/nginx/sites-enabled/$(cat deletedomain).$(cat deleteekstension)" | bash -
 echo "mkdir -p /home/www/$(cat deletedomain)" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart
