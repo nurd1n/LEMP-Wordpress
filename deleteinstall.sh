@@ -119,8 +119,8 @@ wp widget delete $(wp widget list sidebar-1 --format=ids --allow-root) --allow-r
 #Delete inactive plugins
 wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) --allow-root
 #install & activate theme
-wp theme install http://moviestreamfullhd.com/theme/Adsos.zip --allow-root
-wp theme activate Adsos --allow-root
+wp theme install http://moviestreamfullhd.com/theme/Rosos.zip --allow-root
+wp theme activate Rosos --allow-root
 #delete theme unactive
 wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --allow-root
 #install plugin
