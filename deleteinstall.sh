@@ -163,7 +163,7 @@ wp plugin install adsense-privacy-policy --activate --allow-root
 wp plugin install udinra-all-image-sitemap --allow-root
 wp plugin install udinra-mobile-sitemap --allow-root
 wp plugin install jetpack --activate --allow-root
-wp plugin install wordpress-ping-optimizer --activate --allow-root
+wp plugin install wordpress-ping-optimizer --allow-root
 wp plugin install forget-about-shortcode-buttons --activate --allow-root
 wp plugin install akismet --activate --allow-root
 wp plugin install wp-limit-login-attempts --activate --allow-root
