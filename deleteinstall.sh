@@ -77,11 +77,11 @@ cd youtube-upload-master
 sudo python setup.py install
 cd /
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/nginx.conf -o deletenginx.conf
-echo "cat deletenginx.conf" > /etc/nginx/nginx.conf
+echo "$(cat deletenginx.conf)" > /etc/nginx/nginx.conf
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/mime.types -o deletemime.types
-echo "cat deletemime.types" > /etc/nginx/mime.types
+echo "$(cat deletemime.types)" > /etc/nginx/mime.types
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/php.ini -o deletephp.ini
-echo "cat deletephp.ini" >> /etc/php5/fpm/php.ini
+echo "$(cat deletephp.ini)" >> /etc/php5/fpm/php.ini
 sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
 sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php5/fpm/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/fpm/php.ini
@@ -109,9 +109,9 @@ sed -i 's|;php_admin_flag[log_errors] = on|php_admin_flag[log_errors] = on|g' /e
 sed -i 's|;php_admin_value[memory_limit] = 32M|php_admin_value[memory_limit] = 128M|g' /etc/php5/fpm/pool.d/www.conf
 echo "php_admin_value[error_reporting] = 0" >> /etc/php5/fpm/pool.d/www.conf
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/varnish -o deletevarnish
-echo "cat deletevarnish" > /etc/default/varnish2
+echo "$(cat deletevarnish)" > /etc/default/varnish2
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/default.vcl -o deletedefault.vcl
-echo "cat deletedefault.vcl" > /etc/varnish2
+echo "$(cat deletedefault.vcl)" > /etc/varnish/default.vcl
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
 #get ip adress
 ifconfig venet0:0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' > deleteipadress
