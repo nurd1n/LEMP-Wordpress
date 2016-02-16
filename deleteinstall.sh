@@ -153,8 +153,7 @@ wp widget delete $(wp widget list sidebar-1 --format=ids --allow-root) --allow-r
 #Delete inactive plugins
 wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) --allow-root
 #install & activate theme
-wp theme install http://moviestreamfullhd.com/theme/Rosos.zip --allow-root
-wp theme activate Rosos --allow-root
+echo "wp theme install http://moviestreamfullhd.com/theme/$(printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1).zip --activate --allow-root" | bash -
 #delete theme unactive
 wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --allow-root
 #install plugin
