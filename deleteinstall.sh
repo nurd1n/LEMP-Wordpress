@@ -213,7 +213,7 @@ wget https://github.com/nurd1n/Wallpaper-Script/raw/image/bingtitle.py --no-chec
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/build.sh --no-check-certificate --directory-prefix=/home/wallpaper/image
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/start3.sh --no-check-certificate --directory-prefix=/home/wallpaper/image
 #done folder
-echo "find ./* -type d ! -name 'image' ! -name 'video' ! -name 'video2' | cut -c 3- > asin.txt" > /home/wallpaper/image/done/start4.sh
+wget https://github.com/nurd1n/Wallpaper-Script/raw/image/start4.sh --no-check-certificate --directory-prefix=/home/wallpaper/image/done
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/start5.sh --no-check-certificate --directory-prefix=/home/wallpaper/image/done
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/b.sh --no-check-certificate --directory-prefix=/home/wallpaper/image/done
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/c.sh --no-check-certificate --directory-prefix=/home/wallpaper/image/done
