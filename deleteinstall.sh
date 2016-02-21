@@ -168,11 +168,11 @@ wp plugin install akismet --activate --allow-root
 wp plugin install wp-limit-login-attempts --activate --allow-root
 wp plugin install google-sitemap-generator --allow-root
 wp plugin install nginx-helper --allow-root
-wp plugin install nginx-compatibility --activate --allow-root
-wp plugin install apc --activate --allow-root
+wp plugin install nginx-compatibility --allow-root
+wp plugin install apc --allow-root
 wp plugin install wp-seo-html-sitemap --activate --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --activate  --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/searchterms-tagging-2.zip --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/secure-folder-wp-content-uploads.zip  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/seo-booster-pro.zip  --allow-root
@@ -181,7 +181,7 @@ wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --ac
 wp plugin install http://moviestreamfullhd.com/plugin/wp-rocket.zip  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/agc-spinner.zip  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/agk-mp3.zip  --allow-root
-wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate  --allow-root
+wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip  --allow-root
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
 #buat page
