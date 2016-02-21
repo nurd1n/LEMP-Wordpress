@@ -169,7 +169,6 @@ wp plugin install wp-limit-login-attempts --activate --allow-root
 wp plugin install google-sitemap-generator --allow-root
 wp plugin install nginx-helper --allow-root
 wp plugin install nginx-compatibility --allow-root
-wp plugin install apc --allow-root
 wp plugin install wp-seo-html-sitemap --activate --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --allow-root
