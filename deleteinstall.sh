@@ -431,3 +431,6 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /home/wordpressping.txt
 curl -L http://moviestreamfullhd.com/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
+sudo wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+sudo tar xzf ioncube_loaders_lin_x86-64.tar.gz
+rm -f ioncube_loaders_lin_x86-64.tar.gz
