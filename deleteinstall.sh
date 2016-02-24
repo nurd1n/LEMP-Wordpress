@@ -172,7 +172,6 @@ wp plugin install nginx-helper --allow-root
 wp plugin install nginx-compatibility --allow-root
 wp plugin install wp-seo-html-sitemap --activate --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/magic-wallpress.zip --activate  --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/searchterms-tagging-2.zip --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/secure-folder-wp-content-uploads.zip  --allow-root
@@ -432,6 +431,3 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /home/wordpressping.txt
 curl -L http://moviestreamfullhd.com/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
-sudo wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
-sudo tar xzf ioncube_loaders_lin_x86-64.tar.gz
-rm -f ioncube_loaders_lin_x86-64.tar.gz
