@@ -138,8 +138,7 @@ wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/reviewamazon.py
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/titleamazon.py --no-check-certificate --directory-prefix=/home/ebay/attachment
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/titleebay.py --no-check-certificate --directory-prefix=/home/ebay/attachment
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/urlebay.py --no-check-certificate --directory-prefix=/home/ebay/attachment
-touch /home/ebay/artikel/data/asin.txt
-touch /home/ebay/artikel/data/category.txt
+touch /home/ebay/attachment/data/asin.txt
 #robots.txt
 echo "curl -L https://github.com/nurd1n/ebay-Script/raw/artikel/robots.txt | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/www/$(cat /deletedomain)/robots.txt" | bash -
 chmod 755 /home/ebay/artikel/*.sh
