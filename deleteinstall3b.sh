@@ -118,8 +118,8 @@ wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/reviewamazon.py --
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/titleamazon.py --no-check-certificate --directory-prefix=/home/ebay/artikel
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/start1.sh --no-check-certificate --directory-prefix=/home/ebay/artikel
 echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/build.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/artikel/build.sh
-echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/start2.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/artikel/build.sh
-echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/start3.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/artikel/build.sh
+echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/start2.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/artikel/start2.sh
+echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/start3.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/artikel/start3.sh
 touch /home/ebay/artikel/data/asin.txt
 touch /home/ebay/artikel/data/category.txt
 #folder attachment
