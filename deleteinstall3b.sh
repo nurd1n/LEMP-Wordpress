@@ -125,7 +125,8 @@ touch /home/ebay/artikel/data/category.txt
 #folder attachment
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/a.sh --no-check-certificate --directory-prefix=/home/ebay/attachment
 echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/build.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/attachment/build.sh
-wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/start.sh --no-check-certificate --directory-prefix=/home/ebay/attachment
+wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/start1.sh --no-check-certificate --directory-prefix=/home/ebay/attachment
+echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/start2.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/attachment/start2.sh
 echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/sql1 | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/attachment/data/sql1
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/sql2 --no-check-certificate --directory-prefix=/home/ebay/attachment/data
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/sitemap --no-check-certificate --directory-prefix=/home/ebay/attachment/data
