@@ -224,45 +224,41 @@ wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/titleebay.py --
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/urlebay.py --no-check-certificate --directory-prefix=/home/ebay/attachment
 touch /home/ebay/attachment/data/asin.txt
 #robots.txt
-echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/robots.txt | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/www/$(cat /deletedomain)/robots.txt" | bash -
-chmod 755 /home/wallpaper/url/*.sh
-chmod 755 /home/wallpaper/url/report/*.sh
-chmod 755 /home/wallpaper/image/*.sh
-chmod 755 /home/wallpaper/image/done/*.sh
-chmod 755 /home/wallpaper/artikel/*.sh
-chmod 755 /home/wallpaper/attachment/*.sh
+echo "curl -L https://github.com/nurd1n/ebay-Script/raw/artikel/robots.txt | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/www/$(cat /deletedomain)/robots.txt" | bash -
+chmod 755 /home/ebay/artikel/*.sh
+chmod 755 /home/ebay/attachment/*.sh
 # tambah user
 echo "milley;$(wp user create milley milley@domain.com --role=author --display_name=Milley --user_pass=GhfrTDuy%67g^$*34 --porcelain --allow-root)" > /home/user.txt
-echo "milley" > /home/wallpaper/artikel/data/author.txt
+echo "milley" > /home/ebay/artikel/data/author.txt
 echo "martha;$(wp user create martha martha@domain.com --role=author --display_name=Martha --user_pass=GhfrTDuy%67g^$*35 --porcelain --allow-root)" >> /home/user.txt
-echo "martha" >> /home/wallpaper/artikel/data/author.txt
+echo "martha" >> /home/ebay/artikel/data/author.txt
 echo "edward;$(wp user create edward edward@domain.com --role=author --display_name=Edward --user_pass=GhfrTDuy%67g^$*36 --porcelain --allow-root)" >> /home/user.txt
-echo "edward" >> /home/wallpaper/artikel/data/author.txt
+echo "edward" >> /home/ebay/artikel/data/author.txt
 echo "samuel;$(wp user create samuel samuel@domain.com --role=author --display_name=Samuel --user_pass=GhfrTDuy%67g^$*37 --porcelain --allow-root)" >> /home/user.txt
-echo "samuel" >> /home/wallpaper/artikel/data/author.txt
+echo "samuel" >> /home/ebay/artikel/data/author.txt
 echo "daniel;$(wp user create daniel daniel@domain.com --role=author --display_name=Daniel --user_pass=GhfrTDuy%67g^$*38 --porcelain --allow-root)" >> /home/user.txt
-echo "daniel" >> /home/wallpaper/artikel/data/author.txt
+echo "daniel" >> /home/ebay/artikel/data/author.txt
 echo "cason;$(wp user create cason cason@domain.com --role=author --display_name=Cason --user_pass=GhfrTDuy%67g^$*39 --porcelain --allow-root)" >> /home/user.txt
-echo "cason" >> /home/wallpaper/artikel/data/author.txt
+echo "cason" >> /home/ebay/artikel/data/author.txt
 echo "vandiver;$(wp user create vandiver vandiver@domain.com --role=author --display_name=Vandiver --user_pass=GhfrTDuy%67g^$*40 --porcelain --allow-root)" >> /home/user.txt
-echo "vandiver" >> /home/wallpaper/artikel/data/author.txt
+echo "vandiver" >> /home/ebay/artikel/data/author.txt
 echo "teresa;$(wp user create teresa teresa@domain.com --role=author --display_name=Teresa --user_pass=GhfrTDuy%67g^$*41 --porcelain --allow-root)" >> /home/user.txt
-echo "teresa" >> /home/wallpaper/artikel/data/author.txt
+echo "teresa" >> /home/ebay/artikel/data/author.txt
 echo "collins;$(wp user create collins collins@domain.com --role=author --display_name=Collins --user_pass=GhfrTDuy%67g^$*42 --porcelain --allow-root)" >> /home/user.txt
-echo "collins" >> /home/wallpaper/artikel/data/author.txt
+echo "collins" >> /home/ebay/artikel/data/author.txt
 echo "carole;$(wp user create carole carole@domain.com --role=author --display_name=Carole --user_pass=GhfrTDuy%67g^$*43 --porcelain --allow-root)" >> /home/user.txt
-echo "carole" >> /home/wallpaper/artikel/data/author.txt
+echo "carole" >> /home/ebay/artikel/data/author.txt
 echo "tomlin;$(wp user create tomlin tomlin@domain.com --role=author --display_name=Tomlin --user_pass=GhfrTDuy%67g^$*44 --porcelain --allow-root)" >> /home/user.txt
-echo "tomlin" >> /home/wallpaper/artikel/data/author.txt
+echo "tomlin" >> /home/ebay/artikel/data/author.txt
 echo "sharoon;$(wp user create sharoon sharoon@domain.com --role=author --display_name=Sharoon --user_pass=GhfrTDuy%67g^$*45 --porcelain --allow-root)" >> /home/user.txt
-echo "sharoon" >> /home/wallpaper/artikel/data/author.txt
+echo "sharoon" >> /home/ebay/artikel/data/author.txt
 echo "issac;$(wp user create issac issac@domain.com --role=author --display_name=Issac --user_pass=GhfrTDuy%67g^$*46 --porcelain --allow-root)" >> /home/user.txt
-echo "issac" >> /home/wallpaper/artikel/data/author.txt
+echo "issac" >> /home/ebay/artikel/data/author.txt
 echo "samantha;$(wp user create samantha samantha@domain.com --role=author --display_name=Samantha --user_pass=GhfrTDuy%67g^$*47 --porcelain --allow-root)" >> /home/user.txt
-echo "samantha" >> /home/wallpaper/artikel/data/author.txt
+echo "samantha" >> /home/ebay/artikel/data/author.txt
 echo "turner;$(wp user create turner turner@domain.com --role=author --display_name=Turner --user_pass=GhfrTDuy%67g^$*48 --porcelain --allow-root)" >> /home/user.txt
-echo "turner" >> /home/wallpaper/artikel/data/author.txt
-cp /home/wallpaper/artikel/data/author.txt /home/wallpaper/attachment/data/author.txt
+echo "turner" >> /home/ebay/artikel/data/author.txt
+cp /home/ebay/artikel/data/author.txt /home/ebay/attachment/data/author.txt
 chown -R www-data:www-data *
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
 #download file yg dibutuhkan
