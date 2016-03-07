@@ -187,7 +187,7 @@ wp plugin update --all --allow-root
 #buat page
 wp post create --post_type=page --post_title='Sitemap'  --post_content='[wpseo_html_sitemap]' --post_status='publish' --allow-root
 #langkahvps
-mkdir -p /home/www/domain/image
+echo "mkdir -p /home/www/$(cat /deletedomain)/image" | bash -
 mkdir -p /home/ebay/artikel/data
 mkdir -p /home/ebay/attachment/{data,done,spin,template,id}
 mkdir -p /home/ebay/attachment/spin/{par1,par2,par3}
