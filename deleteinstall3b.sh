@@ -128,6 +128,7 @@ echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/build.
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/start.sh --no-check-certificate --directory-prefix=/home/ebay/attachment
 echo "curl -L https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/sql1 | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/ebay/attachment/data/sql1
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/sql2 --no-check-certificate --directory-prefix=/home/ebay/attachment/data
+wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/sitemap --no-check-certificate --directory-prefix=/home/ebay/attachment/data
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/tanggal --no-check-certificate --directory-prefix=/home/ebay/attachment/data
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/ask.py --no-check-certificate --directory-prefix=/home/ebay/attachment
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Attachment/descriptionamazon.py --no-check-certificate --directory-prefix=/home/ebay/attachment
