@@ -107,8 +107,7 @@ wp post create --post_type=page --post_title='Sitemap'  --post_content='[wpseo_h
 #langkahvps
 echo "mkdir -p /home/www/$(cat /deletedomain)/image" | bash -
 mkdir -p /home/ebay/artikel/data
-mkdir -p /home/ebay/attachment/{data,done,spin,template,id}
-mkdir -p /home/ebay/attachment/spin/{par1,par2,par3}
+mkdir -p /home/ebay/attachment/data
 #artikel folder
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/ask.py --no-check-certificate --directory-prefix=/home/ebay/artikel
 wget https://github.com/nurd1n/Amazon-Ebay-Script/raw/Artikel/descriptionamazon.py --no-check-certificate --directory-prefix=/home/ebay/artikel
