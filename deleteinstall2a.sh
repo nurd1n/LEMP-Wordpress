@@ -37,16 +37,17 @@ eval $(echo "cd /home/www/$(cat /deletedomain)")
 # Clone wordpress
 curl -L http://moviestreamfullhd.com/wpdatabase/domain.tar.gz -o domain.tar.gz
 tar -zxvf domain.tar.gz
-rm -f domain.tar.gz
+rm -f domain.gz
 echo "sed -e 's|musicreviewfreee|$(cat /deletedomain)|g' -e 's|kitchens_lee|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' wp-config.php > wp-config2.php" | bash -
 rm -f wp-config.php
 mv wp-config2.php wp-config.php
 echo "sed -i 's|musicreviewfreee.com|$(cat /deletedomain).$(cat /deleteekstension)|g' robots.txt" | bash -
-echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/musicreviewfreee.com/$(cat /deletedomain).$(cat /deleteekstension)/g' -e 's/musicreviewfreee/$(cat /deletedomain)/g' > wp_$(cat /deletedomain)" | bash -
+echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/musicreviewfreee.com/$(cat /deletedomain).$(cat /deleteekstension)/g' -e 's/musicreviewfreee/$(cat /deletedomain)/g' > wp_$(cat /deletedomain).sql" | bash -
 chown -R www-data:www-data *
 # Create database, ganti password, wordpressdb
 echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
-wp db import --allow-root
+echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
+echo "rm -f wp_$(cat /deletedomain).sql" | bash -
 wp plugin update --all --allow-root
 #install & activate theme
 echo "wp theme install http://moviestreamfullhd.com/theme/$(printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1).zip --activate --allow-root" | bash -
