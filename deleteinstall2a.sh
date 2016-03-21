@@ -20,18 +20,6 @@ echo -n "Apa password database wordpress yg diinginkan :
 "
 read passdb
 echo "$passdb" > deletepassdb; clear
-echo -n "Apa user wordpress yg diinginkan :
-"
-read userwp
-echo "$userwp" > deleteuserwp; clear
-echo -n "Apa password wordpress yg diinginkan :
-"
-read passwp
-echo "$passwp" > deletepasswp; clear
-echo -n "Apa email wordpress yg diinginkan :
-"
-read emailwp
-echo "$emailwp" > deleteemailwp; clear
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
 #get ip adress
 ifconfig venet0:0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' > deleteipadress
@@ -58,9 +46,12 @@ echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/mus
 chown -R www-data:www-data *
 # Create database, ganti password, wordpressdb
 echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
-echo "wp core config --dbname=wp_$(cat /deletedomain) --dbuser=$(cat /deleteuserdb) --dbpass=$(cat /deletepassdb) --allow-root" | bash -
 wp db import --allow-root
 wp plugin update --all --allow-root
+#install & activate theme
+echo "wp theme install http://moviestreamfullhd.com/theme/$(printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1).zip --activate --allow-root" | bash -
+#delete theme unactive
+wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --allow-root
 #langkahvps
 mkdir -p /home/wallpaper/url/report/backup
 mkdir -p /home/wallpaper/image/done/image
