@@ -39,11 +39,6 @@ echo "cat deleteblock | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension
 echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension) /etc/nginx/sites-enabled/$(cat deletedomain).$(cat deleteekstension)" | bash -
 echo "mkdir -p /home/www/$(cat deletedomain)" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart; service varnish restart
-# install wp-cli
-cd /tmp
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
 # Install Wordpress and Configure the Database
 eval $(echo "cd /home/www/$(cat /deletedomain)")
 # Install wordpress terbaru
