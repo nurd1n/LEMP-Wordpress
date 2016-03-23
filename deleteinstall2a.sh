@@ -32,7 +32,6 @@ eval $(echo "cd /home/www/$(cat /deletedomain)")
 # Clone wordpress
 curl -L http://moviestreamfullhd.com/wpdatabase/domain.tar.gz -o domain.tar.gz
 tar -zxvf domain.tar.gz
-rm -f domain.tar.gz
 echo "sed -e 's|hometiful|$(cat /deletedomain)|g' -e 's|leeedwardjoon|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' wp-config.php > wp-config2.php" | bash -
 rm -f wp-config.php
 mv wp-config2.php wp-config.php
@@ -43,6 +42,7 @@ chown -R www-data:www-data *
 echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
 echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
 echo "rm -f wp_$(cat /deletedomain).sql" | bash -
+rm -f domain.tar.gz
 wp plugin update --all --allow-root
 #install & activate theme
 echo "wp theme install http://moviestreamfullhd.com/theme/$(printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1).zip --activate --allow-root" | bash -
