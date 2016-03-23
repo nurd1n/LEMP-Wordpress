@@ -33,11 +33,11 @@ eval $(echo "cd /home/www/$(cat /deletedomain)")
 curl -L http://moviestreamfullhd.com/wpdatabase/domain.tar.gz -o domain.tar.gz
 tar -zxvf domain.tar.gz
 rm -f domain.gz
-echo "sed -e 's|musicreviewfreee|$(cat /deletedomain)|g' -e 's|kitchens_lee|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' wp-config.php > wp-config2.php" | bash -
+echo "sed -e 's|hometiful|$(cat /deletedomain)|g' -e 's|leeedwardjoon|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' wp-config.php > wp-config2.php" | bash -
 rm -f wp-config.php
 mv wp-config2.php wp-config.php
-echo "sed -i 's|musicreviewfreee.com|$(cat /deletedomain).$(cat /deleteekstension)|g' robots.txt" | bash -
-echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/musicreviewfreee.com/$(cat /deletedomain).$(cat /deleteekstension)/g' -e 's/musicreviewfreee/$(cat /deletedomain)/g' > wp_$(cat /deletedomain).sql" | bash -
+echo "sed -i 's|hometiful.com|$(cat /deletedomain).$(cat /deleteekstension)|g' robots.txt" | bash -
+echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/hometiful.com/$(cat /deletedomain).$(cat /deleteekstension)/g' -e 's/hometiful/$(cat /deletedomain)/g' > wp_$(cat /deletedomain).sql" | bash -
 chown -R www-data:www-data *
 # Create database, ganti password, wordpressdb
 echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
