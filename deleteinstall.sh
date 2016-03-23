@@ -182,3 +182,8 @@ echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e
 chmod 755 extra.sh
 ./extra.sh
 rm -f extra.sh
+#download file yg dibutuhkan
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /home/aiopluginsetting.ini
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /home/wordpressping.txt
+curl -L http://moviestreamfullhd.com/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
