@@ -16,7 +16,7 @@ wget https://github.com/nurd1n/Wallpaper-Script/raw/url/start1.sh --no-check-cer
 wget https://github.com/nurd1n/Wallpaper-Script/raw/url/build.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/url
 wget https://github.com/nurd1n/Wallpaper-Script/raw/url/url.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/url
 wget https://github.com/nurd1n/Wallpaper-Script/raw/url/backup.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/url/report
-wget https://github.com/nurd1n/Wallpaper-Script/raw/url/start2.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/url/report
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/url/start2.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaperdomain1ekstension1/url/report/start2.sh" | bash -
 #image folder
 touch /home/wallpaperdomain1ekstension1/image/urlimage.txt
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/a.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/image
@@ -29,9 +29,8 @@ wget https://github.com/nurd1n/Wallpaper-Script/raw/image/start4.sh --no-check-c
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/start5.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/image/done
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/b.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/image/done
 wget https://github.com/nurd1n/Wallpaper-Script/raw/image/c.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/image/done
-wget https://github.com/nurd1n/Wallpaper-Script/raw/image/isifolder.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/image/done
-wget https://github.com/nurd1n/Wallpaper-Script/raw/image/start6.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/image/done
-curl -L http://moviestreamfullhd.com/images/white.jpg -o /home/wallpaperdomain1ekstension1/image/done/video/white.jpg
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/image/isifolder.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaperdomain1ekstension1/image/done/isifolder.sh" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/image/start6.sh | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaperdomain1ekstension1/image/done/start6.sh" | bash -
 #artikel folder
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/a.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/wallpaperdomain1ekstension1/artikel/a.html
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/b.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g'" | bash - > /home/wallpaperdomain1ekstension1/artikel/b.html
