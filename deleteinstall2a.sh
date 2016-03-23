@@ -32,7 +32,7 @@ eval $(echo "cd /home/www/$(cat /deletedomain)")
 # Clone wordpress
 curl -L http://moviestreamfullhd.com/wpdatabase/domain.tar.gz -o domain.tar.gz
 tar -zxvf domain.tar.gz
-rm -f domain.gz
+rm -f domain.tar.gz
 echo "sed -e 's|hometiful|$(cat /deletedomain)|g' -e 's|leeedwardjoon|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' wp-config.php > wp-config2.php" | bash -
 rm -f wp-config.php
 mv wp-config2.php wp-config.php
