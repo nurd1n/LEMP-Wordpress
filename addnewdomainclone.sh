@@ -79,7 +79,6 @@ wp plugin install http://moviestreamfullhd.com/plugin/wp-freshstart.zip --activa
 wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
 wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip  --allow-root
 chown -R www-data:www-data *
-wp plugin update --all --allow-root
 #buat page
 wp post create --post_type=page --post_title='Sitemap'  --post_content='[wpseo_html_sitemap]' --post_status='publish' --allow-root
 echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e 's/domain1/$(cat /deletedomain)/g' -e 's/ekstension1/$(cat /deleteekstension)/g' > extra.sh" | bash -
@@ -90,8 +89,9 @@ echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/hom
 echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
 echo "rm -f wp_$(cat /deletedomain).sql" | bash -
 cd wp-content/uploads
-curl -L http://moviestreamfullhd.com/wpdatabase/domain.tar.gz -o uploads.tar.gz
+curl -L http://moviestreamfullhd.com/wpdatabase/uploads.tar.gz -o uploads.tar.gz
 tar -zxvf uploads.tar.gz
-rm -f uploas.tar.gz
+rm -f uploads.tar.gz
 eval $(echo "cd /home/www/$(cat /deletedomain)")
 chown -R www-data:www-data *
+wp plugin update --all --allow-root
