@@ -43,7 +43,6 @@ echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(c
 echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
 echo "rm -f wp_$(cat /deletedomain).sql" | bash -
 rm -f domain.tar.gz
-wp plugin update --all --allow-root
 #install & activate theme
 echo "wp theme install http://moviestreamfullhd.com/theme/$(printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1).zip --activate --allow-root" | bash -
 #delete theme unactive
@@ -52,3 +51,9 @@ echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e
 chmod 755 extra.sh
 ./extra.sh
 rm -f extra.sh
+echo "UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'publish' and \`post_type\` = 'post'; UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'future' and \`post_type\` = 'post';" > deletemysql.sql
+wp db query --allow-root < deletemysql.sql
+wp plugin install drafts-scheduler --activate --allow-root
+wp plugin install wp-missed-schedule --activate --allow-root
+wp plugin update --all --allow-root
+rm -f deletemysql.sql
