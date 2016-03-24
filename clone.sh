@@ -47,10 +47,6 @@ rm -f domain.tar.gz
 echo "wp theme install http://moviestreamfullhd.com/theme/$(printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1).zip --activate --allow-root" | bash -
 #delete theme unactive
 wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --allow-root
-echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e 's/domain1/$(cat /deletedomain)/g' -e 's/ekstension1/$(cat /deleteekstension)/g' > extra.sh" | bash -
-chmod 755 extra.sh
-./extra.sh
-rm -f extra.sh
 echo "UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'publish' and \`post_type\` = 'post'; UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'future' and \`post_type\` = 'post';" > deletemysql.sql
 wp db query --allow-root < deletemysql.sql
 wp plugin install drafts-scheduler --activate --allow-root
