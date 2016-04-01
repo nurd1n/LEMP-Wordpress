@@ -86,7 +86,7 @@ echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e
 chmod 755 extra.sh
 ./extra.sh
 rm -f extra.sh
-echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/hometiful.com/$(cat /deletedomain).$(cat /deleteekstension)/g' -e 's/hometiful/$(cat /deletedomain)/g' > wp_$(cat /deletedomain).sql" | bash -
+echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/lailykitchen.xyz/$(cat /deletedomain).$(cat /deleteekstension)/g' -e 's/lailykitchen/$(cat /deletedomain)/g' > wp_$(cat /deletedomain).sql" | bash -
 echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
 echo "rm -f wp_$(cat /deletedomain).sql" | bash -
 cd wp-content/uploads
