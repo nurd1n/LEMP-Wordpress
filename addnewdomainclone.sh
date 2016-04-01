@@ -80,8 +80,6 @@ wp plugin install http://moviestreamfullhd.com/plugin/wp-freshstart.zip --activa
 wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
 wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate --allow-root
 chown -R www-data:www-data *
-#buat page
-wp post create --post_type=page --post_title='Sitemap'  --post_content='[wpseo_html_sitemap]' --post_status='publish' --allow-root
 echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e 's/domain1/$(cat /deletedomain)/g' -e 's/ekstension1/$(cat /deleteekstension)/g' > extra.sh" | bash -
 chmod 755 extra.sh
 ./extra.sh
