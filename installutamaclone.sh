@@ -20,18 +20,9 @@ echo -n "Apa password database wordpress yg diinginkan :
 "
 read passdb
 echo "$passdb" > deletepassdb; clear
-echo -n "Apa user wordpress yg diinginkan :
-"
-read userwp
-echo "$userwp" > deleteuserwp; clear
-echo -n "Apa password wordpress yg diinginkan :
-"
-read passwp
-echo "$passwp" > deletepasswp; clear
-echo -n "Apa email wordpress yg diinginkan :
-"
-read emailwp
-echo "$emailwp" > deleteemailwp; clear
+echo "leeedwardjoon" > deleteuserwp; clear
+echo "leeedwardjoon" > deletepasswp; clear
+echo "leeedwardjoon@gmail.com" > deleteemailwp; clear
 #install x2go
 apt-get update && apt-get -y install aptitude
 apt-get install gawk python-setuptools software-properties-common
