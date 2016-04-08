@@ -8,7 +8,7 @@ echo -n "Apa nama ekstension domain anda (com, net, org, xyz, dll) :
 "
 read ekstension
 echo "$ekstension" > deleteekstension; clear
-echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)" > /home/database.txt
+echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)" >> /home/database.txt
 echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
 "
 read passmysql
