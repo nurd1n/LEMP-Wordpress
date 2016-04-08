@@ -50,3 +50,4 @@ wp plugin install drafts-scheduler --activate --allow-root
 wp plugin install wp-missed-schedule --activate --allow-root
 wp plugin update --all --allow-root
 rm -f deletemysql.sql
+wp post delete 9 --force --allow-root
