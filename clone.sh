@@ -8,18 +8,15 @@ echo -n "Apa nama ekstension domain anda (com, net, org, xyz, dll) :
 "
 read ekstension
 echo "$ekstension" > deleteekstension; clear
+echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)" >> /home/database.txt
 echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
 "
 read passmysql
 echo "$passmysql" > deletepassmysql; clear
-echo -n "Apa user database wordpress yg diinginkan :
-"
-read userdb
-echo "$userdb" > deleteuserdb; clear
-echo -n "Apa password database wordpress yg diinginkan :
-"
-read passdb
-echo "$passdb" > deletepassdb; clear
+tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deleteuserdb; clear
+tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deletepassdb; clear
+echo "user db wp : $(cat /deleteuserdb)" >> /home/database.txt
+echo "pass db wp : $(cat /deletepassdb)" >> /home/database.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
 #get ip adress
 ifconfig venet0:0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' > deleteipadress
