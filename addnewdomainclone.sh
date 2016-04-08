@@ -15,8 +15,8 @@ read passmysql
 echo "$passmysql" > deletepassmysql; clear
 tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deleteuserdb; clear
 tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deletepassdb; clear
-echo "$(cat /deleteuserdb)" >> /home/database.txt
-echo "$(cat /deletepassdb)" >> /home/database.txt
+echo "user db wp : $(cat /deleteuserdb)" >> /home/database.txt
+echo "pass db wp : $(cat /deletepassdb)" >> /home/database.txt
 echo "leeedwardjoon" > deleteuserwp; clear
 echo "leeedwardjoon" > deletepasswp; clear
 echo "leeedwardjoon@gmail.com" > deleteemailwp; clear
