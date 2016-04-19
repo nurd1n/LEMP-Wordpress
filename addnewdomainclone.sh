@@ -57,6 +57,7 @@ wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) -
 #install & activate theme
 printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1 > /deletetheme
 echo "wp theme install http://moviestreamfullhd.com/theme/$(cat /deletetheme).zip --activate --allow-root" | bash -
+echo "wp theme activate $(cat /deletetheme) --allow-root" | bash -
 #delete theme unactive
 wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --allow-root
 #install plugin
