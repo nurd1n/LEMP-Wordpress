@@ -47,7 +47,7 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 # Install Wordpress and Configure the Database
 eval $(echo "cd /home/www/$(cat /deletedomain)")
 # Install wordpress terbaru
-wp core download --version=4.4.1 --allow-root
+wp core download --version=4.5 --allow-root
 chown -R www-data:www-data *
 # Create database, ganti password, wordpressdb
 echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
