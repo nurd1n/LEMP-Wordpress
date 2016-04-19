@@ -29,6 +29,7 @@ echo "leeedwardjoon" > deleteuserwp; clear
 echo "leeedwardjoon" > deletepasswp; clear
 echo "leeedwardjoon@gmail.com" > deleteemailwp; clear
 #install x2go
+sudo apt-get install apt-transport-https
 apt-get update && apt-get -y install aptitude
 apt-get install gawk python-setuptools software-properties-common
 echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
