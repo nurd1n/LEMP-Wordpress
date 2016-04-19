@@ -33,6 +33,7 @@ echo -n "Apa email wordpress yg diinginkan :
 read emailwp
 echo "$emailwp" > deleteemailwp; clear
 #install x2go
+sudo apt-get install apt-transport-https
 apt-get update && apt-get -y install aptitude
 apt-get install gawk python-setuptools software-properties-common
 echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
