@@ -13,6 +13,14 @@ echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
 "
 read passmysql
 echo "$passmysql" > deletepassmysql; clear
+echo -n "Apa inisial blog anda (huruf kecil semua) :
+"
+read inisial
+echo "$inisial" > deleteinisial; clear
+echo -n "Apa keyword blog anda (huruf kecil semua) :
+"
+read keyword
+echo "$keyword" > deletekeyword; clear
 tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deleteuserdb; clear
 tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deletepassdb; clear
 echo "user db wp : $(cat /deleteuserdb)" >> /home/database.txt
@@ -170,7 +178,7 @@ echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e
 chmod 755 extra.sh
 ./extra.sh
 rm -f extra.sh
-echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's/lailykitchen.xyz/$(cat /deletedomain).$(cat /deleteekstension)/g' -e 's/lailykitchen/$(cat /deletedomain)/g' > wp_$(cat /deletedomain).sql" | bash -
+echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's|lailykitchen.xyz|$(cat /deletedomain).$(cat /deleteekstension)|g' -e 's|lailykitchen|$(cat /deletedomain)|g' -e 's|kitchen1|$(cat /deletekeyword)|g' -e 's|Laily|$(cat /deleteinisial | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|Kitchen|$(cat /deletekeyword | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|laily|$(cat /deleteinisial)|g' -e 's|kitchen|$(cat /deletekeyword)|g' -e 's|f0d7c9d7-d72b-46c2-8ab6-b74165057961|$(cat /etc/varnish/secret)|g' > wp_$(cat /deletedomain).sql" | bash -
 echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
 echo "rm -f wp_$(cat /deletedomain).sql" | bash -
 cd wp-content/uploads
