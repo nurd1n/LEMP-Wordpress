@@ -101,5 +101,6 @@ eval $(echo "cd /home/www/$(cat /deletedomain)")
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
 echo "wp theme install http://moviestreamfullhd.com/theme/$(cat /deletetheme).zip --activate --allow-root" | bash -
+echo "wp theme activate $(cat /deletetheme) --allow-root" | bash
 wp core update-db --allow-root
 wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
