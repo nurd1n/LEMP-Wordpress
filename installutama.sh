@@ -111,7 +111,7 @@ sed -i 's|;php_admin_flag[log_errors] = on|php_admin_flag[log_errors] = on|g' /e
 sed -i 's|;php_admin_value[memory_limit] = 32M|php_admin_value[memory_limit] = 128M|g' /etc/php5/fpm/pool.d/www.conf
 echo "php_admin_value[error_reporting] = 0" >> /etc/php5/fpm/pool.d/www.conf
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/varnish -o deletevarnish
-echo "$(cat deletevarnish)" > /etc/default/varnish2
+echo "$(cat deletevarnish)" > /etc/default/varnish
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/default.vcl -o deletedefault.vcl
 echo "$(cat deletedefault.vcl)" > /etc/varnish/default.vcl
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
