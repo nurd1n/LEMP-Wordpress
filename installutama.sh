@@ -55,7 +55,14 @@ apt-get update
 apt-get install nginx-extras
 #install php5-fpm
 apt-get update
-apt-get install php5 php5-mysql php5-mysqlnd php5-mcrypt php5-gd php5-fpm curl libcurl3 php5-curl
+apt-get install php5
+apt-get install php5-mysql
+apt-get install php5-mysqlnd
+apt-get install php5-mcrypt
+apt-get install php5-gd
+apt-get install php5-fpm
+apt-get install php5-curl
+apt-get install curl libcurl3
 #install mariadb
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 sudo add-apt-repository 'deb http://mirrors.coreix.net/mariadb/repo/10.0/ubuntu vivid main'
