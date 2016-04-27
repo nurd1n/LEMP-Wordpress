@@ -56,6 +56,7 @@ sudo service nginx restart; sudo service php5-fpm restart; service mysql restart
 eval $(echo "cd /home/www/$(cat /deletedomainbaru)")
 # Clone wordpress
 echo "curl -L http://$(cat /deleteipawal)/domain-$(cat /deletedomainawal)$(cat /deleteekstensionawal).tar.gz -o domain.tar.gz" | bash -
+echo "curl -L http://$(cat /deleteipawal)/secret > /deletesecret" | bash -
 tar -zxvf domain.tar.gz
 echo "sed -e 's|$(cat /deletedomainawal)|$(cat /deletedomainbaru)|g' -e 's|$(cat /deleteuserdbawal)|$(cat /deleteuserdbbaru)|g' -e 's|$(cat /deletepassdbawal)|$(cat /deletepassdbbaru)|g' wp-config.php > wp-config2.php" | bash -
 rm -f wp-config.php
@@ -80,6 +81,7 @@ echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleted
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deletedomainawal)\",\"$(cat /deletedomainbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleteinisialawal)\",\"$(cat /deleteinisialbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleteinisialawal | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\",\"$(cat /deleteinisialbaru | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\");" >> deletemysql.sql
+echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deletesecret)\",\"$(cat /etc/varnish/secret)\");" >> deletemysql.sql
 wp db query --allow-root < deletemysql.sql
 echo "UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'publish' and \`post_type\` = 'post'; UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'future' and \`post_type\` = 'post';" > deletemysql.sql
 wp db query --allow-root < deletemysql.sql
