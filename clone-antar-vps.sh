@@ -62,6 +62,12 @@ rm -f wp-config.php
 mv wp-config2.php wp-config.php
 echo "sed -i 's|$(cat /deletedomainawal).$(cat /deleteekstensionawal)|$(cat /deletedomainbaru).$(cat /deleteekstensionbaru)|g' robots.txt" | bash -
 echo "curl -L http://$(cat /deleteipawal)/wp_$(cat /deletedomainawal)$(cat /deleteekstensionawal).sql > wp_$(cat /deletedomainbaru).sql" | bash -
+chown -R www-data:www-data *
+# Create database, ganti password, wordpressdb
+echo "echo \"echo \\\"create database wp_\$(cat /deletedomainbaru); create user \$(cat /deleteuserdbbaru)@localhost identified by '\$(cat /deletepassdbbaru)'; grant all privileges on wp_\$(cat /deletedomainbaru).* to \$(cat /deleteuserdbbaru)@localhost identified by '\$(cat /deletepassdbbaru)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
+echo "mysql -u $(cat /deleteuserdbbaru) \"-p$(cat /deletepassdbbaru)\" wp_$(cat /deletedomainbaru) < wp_$(cat /deletedomainbaru).sql" | bash -
+echo "rm -f wp_$(cat /deletedomainbaru).sql" | bash -
+rm -f domain.tar.gz
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deletedomainawal).$(cat /deleteekstensionawal)\",\"$(cat /deletedomainbaru).$(cat /deleteekstensionbaru)\");" > deletemysql.sql
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deletedomainawal)\",\"$(cat /deletedomainbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deleteinisialawal)\",\"$(cat /deleteinisialbaru)\");" >> deletemysql.sql
@@ -75,22 +81,14 @@ echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleted
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleteinisialawal)\",\"$(cat /deleteinisialbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleteinisialawal | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\",\"$(cat /deleteinisialbaru | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\");" >> deletemysql.sql
 wp db query --allow-root < deletemysql.sql
-chown -R www-data:www-data *
-# Create database, ganti password, wordpressdb
-echo "echo \"echo \\\"create database wp_\$(cat /deletedomainbaru); create user \$(cat /deleteuserdbbaru)@localhost identified by '\$(cat /deletepassdbbaru)'; grant all privileges on wp_\$(cat /deletedomainbaru).* to \$(cat /deleteuserdbbaru)@localhost identified by '\$(cat /deletepassdbbaru)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
-echo "mysql -u $(cat /deleteuserdbbaru) \"-p$(cat /deletepassdbbaru)\" wp_$(cat /deletedomainbaru) < wp_$(cat /deletedomainbaru).sql" | bash -
-echo "rm -f wp_$(cat /deletedomainbaru).sql" | bash -
-rm -f domain.tar.gz
 echo "UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'publish' and \`post_type\` = 'post'; UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'future' and \`post_type\` = 'post';" > deletemysql.sql
 wp db query --allow-root < deletemysql.sql
-wp plugin activate wp-all-import-pro --allow-root
 wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
 wp plugin update --all --allow-root
 rm -f deletemysql.sql
 wp core update --version=4.5 --force --allow-root
 wp core update-db --allow-root
-mkdir -p wallpaper/{lama,baru}
+mkdir -p wallpaper/lama
 wp post list --post_type=post --fields=ID,post_title --format=csv --allow-root | sed -e 's/ID,post_title//g' -e '/^$/d' -e 's/ /+/g' -e 's/,"/ > wallpaper\/lama\//g' -e 's/.*/echo &/' -e 's/"/.txt/g' | tr '[A-Z]' '[a-z]' > deleteid.sh
 chmod 755 deleteid.sh
 ./deleteid.sh
-wp post delete $(wp post list --post_type='post' --format=ids --allow-root) --force --allow-root
