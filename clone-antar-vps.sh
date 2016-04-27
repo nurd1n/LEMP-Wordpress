@@ -85,10 +85,13 @@ echo "UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 
 wp db query --allow-root < deletemysql.sql
 wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
 wp plugin update --all --allow-root
-rm -f deletemysql.sql
 wp core update --version=4.5 --force --allow-root
 wp core update-db --allow-root
-mkdir -p wallpaper/lama
-wp post list --post_type=post --fields=ID,post_title --format=csv --allow-root | sed -e 's/ID,post_title//g' -e '/^$/d' -e 's/ /+/g' -e 's/,"/ > wallpaper\/lama\//g' -e 's/.*/echo &/' -e 's/"/.txt/g' | tr '[A-Z]' '[a-z]' > deleteid.sh
-chmod 755 deleteid.sh
-./deleteid.sh
+echo "UPDATE wp_posts SET post_date = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 100) DAY;" > deletemysql.sql
+echo "UPDATE wp_posts SET post_date_gmt = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 100) DAY;" >> deletemysql.sql
+echo "UPDATE wp_posts SET post_modified = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 100) DAY;" >> deletemysql.sql
+echo "UPDATE wp_posts SET post_modified_gmt = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 100) DAY;" >> deletemysql.sql
+wp db query --allow-root < deletemysql.sql
+echo "UPDATE \`wp_posts\` SET \`post_status\` = 'publish' where \`post_status\` = 'draft' and \`post_type\` = 'post';" > deletemysql.sql
+wp db query --allow-root < deletemysql.sql
+rm -f deletemysql.sql
