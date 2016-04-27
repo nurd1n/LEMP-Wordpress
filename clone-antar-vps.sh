@@ -68,7 +68,6 @@ chown -R www-data:www-data *
 echo "echo \"echo \\\"create database wp_\$(cat /deletedomainbaru); create user \$(cat /deleteuserdbbaru)@localhost identified by '\$(cat /deletepassdbbaru)'; grant all privileges on wp_\$(cat /deletedomainbaru).* to \$(cat /deleteuserdbbaru)@localhost identified by '\$(cat /deletepassdbbaru)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
 echo "mysql -u $(cat /deleteuserdbbaru) \"-p$(cat /deletepassdbbaru)\" wp_$(cat /deletedomainbaru) < wp_$(cat /deletedomainbaru).sql" | bash -
 echo "rm -f wp_$(cat /deletedomainbaru).sql" | bash -
-rm -f domain.tar.gz
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deletedomainawal).$(cat /deleteekstensionawal)\",\"$(cat /deletedomainbaru).$(cat /deleteekstensionbaru)\");" > deletemysql.sql
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deletedomainawal)\",\"$(cat /deletedomainbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deleteinisialawal)\",\"$(cat /deleteinisialbaru)\");" >> deletemysql.sql
@@ -99,3 +98,4 @@ wp db query --allow-root < deletemysql.sql
 rm -f *.sql
 rm -f read*
 rm -f license.txt
+rm -f domain.tar.gz
