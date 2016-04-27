@@ -60,7 +60,7 @@ tar -zxvf domain.tar.gz
 echo "sed -e 's|$(cat /deletedomainawal)|$(cat /deletedomainbaru)|g' -e 's|$(cat /deleteuserdbawal)|$(cat /deleteuserdbbaru)|g' -e 's|$(cat /deletepassdbawal)|$(cat /deletepassdbbaru)|g' wp-config.php > wp-config2.php" | bash -
 rm -f wp-config.php
 mv wp-config2.php wp-config.php
-echo "sed -i 's|$(cat /deletedomainawal).$(cat /deleteekstensionawal)|$(cat /deletedomainbaru).$(cat /deleteekstensionbaru)|g' robots.txt" | bash -
+echo "sed -i 's|$(cat /deletedomainawal)\.$(cat /deleteekstensionawal)|$(cat /deletedomainbaru)\.$(cat /deleteekstensionbaru)|g' robots.txt" | bash -
 echo "curl -L http://$(cat /deleteipawal)/wp_$(cat /deletedomainawal)$(cat /deleteekstensionawal).sql > wp_$(cat /deletedomainbaru).sql" | bash -
 chown -R www-data:www-data *
 # Create database, ganti password, wordpressdb
@@ -95,3 +95,5 @@ wp db query --allow-root < deletemysql.sql
 echo "UPDATE \`wp_posts\` SET \`post_status\` = 'publish' where \`post_status\` = 'draft' and \`post_type\` = 'post';" > deletemysql.sql
 wp db query --allow-root < deletemysql.sql
 rm -f deletemysql.sql
+rm -f read*
+rm -f license.txt
