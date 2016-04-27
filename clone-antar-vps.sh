@@ -96,6 +96,6 @@ echo "UPDATE wp_posts SET post_modified_gmt = CURRENT_TIMESTAMP - INTERVAL FLOOR
 wp db query --allow-root < deletemysql.sql
 echo "UPDATE \`wp_posts\` SET \`post_status\` = 'publish' where \`post_status\` = 'draft' and \`post_type\` = 'post';" > deletemysql.sql
 wp db query --allow-root < deletemysql.sql
-rm -f deletemysql.sql
+rm -f *.sql
 rm -f read*
 rm -f license.txt
