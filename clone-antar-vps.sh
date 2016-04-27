@@ -83,11 +83,14 @@ echo "rm -f wp_$(cat /deletedomainbaru).sql" | bash -
 rm -f domain.tar.gz
 echo "UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'publish' and \`post_type\` = 'post'; UPDATE \`wp_posts\` SET \`post_status\` = 'draft' where \`post_status\` = 'future' and \`post_type\` = 'post';" > deletemysql.sql
 wp db query --allow-root < deletemysql.sql
-wp plugin install drafts-scheduler --allow-root
-wp plugin activate drafts-scheduler --allow-root
-wp plugin install https://github.com/sLaNGjI/wp-missed-schedule/archive/master.zip --activate --allow-root
+wp plugin activate wp-all-import-pro --allow-root
+wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
 wp plugin update --all --allow-root
 rm -f deletemysql.sql
-wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
 wp core update --version=4.5 --force --allow-root
 wp core update-db --allow-root
+mkdir -p wallpaper/{lama,baru}
+wp post list --post_type=post --fields=ID,post_title --format=csv --allow-root | sed -e 's/ID,post_title//g' -e '/^$/d' -e 's/ /+/g' -e 's/,"/ > wallpaper\/lama\//g' -e 's/.*/echo &/' -e 's/"/.txt/g' | tr '[A-Z]' '[a-z]' > deleteid.sh
+chmod 755 deleteid.sh
+./deleteid.sh
+wp post delete $(wp post list --post_type='post' --format=ids --allow-root) --force --allow-root
