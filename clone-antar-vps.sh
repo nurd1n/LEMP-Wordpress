@@ -88,6 +88,6 @@ wp plugin activate drafts-scheduler --allow-root
 wp plugin install https://github.com/sLaNGjI/wp-missed-schedule/archive/master.zip --activate --allow-root
 wp plugin update --all --allow-root
 rm -f deletemysql.sql
+wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
 wp core update --version=4.5 --force --allow-root
 wp core update-db --allow-root
-wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
