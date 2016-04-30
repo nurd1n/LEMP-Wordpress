@@ -70,15 +70,18 @@ echo "mysql -u $(cat /deleteuserdbbaru) \"-p$(cat /deletepassdbbaru)\" wp_$(cat 
 echo "rm -f wp_$(cat /deletedomainbaru).sql" | bash -
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deletedomainawal).$(cat /deleteekstensionawal)\",\"$(cat /deletedomainbaru).$(cat /deleteekstensionbaru)\");" > deletemysql.sql
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deletedomainawal)\",\"$(cat /deletedomainbaru)\");" >> deletemysql.sql
-echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deleteinisialawal)\",\"$(cat /deleteinisialbaru)\");" >> deletemysql.sql
+echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deleteinisialawal) \",\"$(cat /deleteinisialbaru) \");" >> deletemysql.sql
+echo "UPDATE wp_posts SET post_content = replace(post_content,\" $(cat /deleteinisialawal)\",\" $(cat /deleteinisialbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_posts SET post_content = replace(post_content,\"$(cat /deleteinisialawal | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\",\"$(cat /deleteinisialbaru | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\");" >> deletemysql.sql
 echo "UPDATE wp_postmeta SET meta_value = replace(meta_value,\"$(cat /deletedomainawal).$(cat /deleteekstensionawal)\",\"$(cat /deletedomainbaru).$(cat /deleteekstensionbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_postmeta SET meta_value = replace(meta_value,\"$(cat /deletedomainawal)\",\"$(cat /deletedomainbaru)\");" >> deletemysql.sql
-echo "UPDATE wp_postmeta SET meta_value = replace(meta_value,\"$(cat /deleteinisialawal)\",\"$(cat /deleteinisialbaru)\");" >> deletemysql.sql
+echo "UPDATE wp_postmeta SET meta_value = replace(meta_value,\"$(cat /deleteinisialawal) \",\"$(cat /deleteinisialbaru) \");" >> deletemysql.sql
+echo "UPDATE wp_postmeta SET meta_value = replace(meta_value,\" $(cat /deleteinisialawal)\",\" $(cat /deleteinisialbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_postmeta SET meta_value = replace(meta_value,\"$(cat /deleteinisialawal | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\",\"$(cat /deleteinisialbaru | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\");" >> deletemysql.sql
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deletedomainawal).$(cat /deleteekstensionawal)\",\"$(cat /deletedomainbaru).$(cat /deleteekstensionbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deletedomainawal)\",\"$(cat /deletedomainbaru)\");" >> deletemysql.sql
-echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleteinisialawal)\",\"$(cat /deleteinisialbaru)\");" >> deletemysql.sql
+echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleteinisialawal) \",\"$(cat /deleteinisialbaru) \");" >> deletemysql.sql
+echo "UPDATE wp_options SET option_value = replace(option_value,\" $(cat /deleteinisialawal)\",\" $(cat /deleteinisialbaru)\");" >> deletemysql.sql
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deleteinisialawal | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\",\"$(cat /deleteinisialbaru | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')\");" >> deletemysql.sql
 echo "UPDATE wp_options SET option_value = replace(option_value,\"$(cat /deletesecret)\",\"$(cat /etc/varnish/secret)\");" >> deletemysql.sql
 wp db query --allow-root < deletemysql.sql
