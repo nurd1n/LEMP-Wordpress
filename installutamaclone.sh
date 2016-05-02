@@ -71,14 +71,6 @@ sudo apt-get install at sendmail ffmpeg midori bleachbit gedit terminator filezi
 #install mechanize & beautifulsoup
 easy_install mechanize
 easy_install BeautifulSoup4
-#install google-api-python-client dan progressbar2
-pip install --upgrade google-api-python-client
-pip install --upgrade google-api-python-client progressbar2
-#install youtube upload
-wget https://github.com/tokland/youtube-upload/archive/master.zip
-unzip master.zip
-cd youtube-upload-master
-sudo python setup.py install
 cd /
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/nginx.conf -o deletenginx.conf
 echo "$(cat deletenginx.conf)" > /etc/nginx/nginx.conf
