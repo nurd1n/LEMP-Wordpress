@@ -95,3 +95,4 @@ echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e
 chmod 755 extra.sh
 ./extra.sh
 rm -f extra.sh
+echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
