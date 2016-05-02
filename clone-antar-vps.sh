@@ -102,3 +102,4 @@ rm -f *.sql
 rm -f read*
 rm -f license.txt
 rm -f domain.tar.gz
+echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
