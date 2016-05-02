@@ -104,3 +104,4 @@ echo "wp theme install http://moviestreamfullhd.com/theme/$(cat /deletetheme).zi
 echo "wp theme activate $(cat /deletetheme) --allow-root" | bash
 wp core update-db --allow-root
 wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
+echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
