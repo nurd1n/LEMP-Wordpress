@@ -28,6 +28,13 @@ echo "pass db wp : $(cat /deletepassdb)" >> /home/database.txt
 echo "leeedwardjoon" > deleteuserwp; clear
 echo "leeedwardjoon" > deletepasswp; clear
 echo "leeedwardjoon@gmail.com" > deleteemailwp; clear
+#untuk data clone
+mkdir -p /home/clone
+cat /deletedomain >> /home/clone/domainawal
+cat /deleteekstension >> /home/clone/ekstensionawal
+cat /deleteinisial >> /home/clone/inisialawal
+cat /deleteuserdb >> /home/clone/userdbawal
+cat /deletepassdb >> /home/clone/passdbawal
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
 #get ip adress
 ifconfig venet0:0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' > deleteipadress
