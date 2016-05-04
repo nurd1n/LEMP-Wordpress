@@ -91,10 +91,10 @@ wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts -
 wp plugin update --all --allow-root
 wp core update --version=4.5 --force --allow-root
 wp core update-db --allow-root
-echo "UPDATE wp_posts SET post_date = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 100) DAY;" > deletemysql.sql
-echo "UPDATE wp_posts SET post_date_gmt = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 100) DAY;" >> deletemysql.sql
-echo "UPDATE wp_posts SET post_modified = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 100) DAY;" >> deletemysql.sql
-echo "UPDATE wp_posts SET post_modified_gmt = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 100) DAY;" >> deletemysql.sql
+echo "UPDATE wp_posts SET post_date = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 180) DAY;" > deletemysql.sql
+echo "UPDATE wp_posts SET post_date_gmt = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 180) DAY;" >> deletemysql.sql
+echo "UPDATE wp_posts SET post_modified = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 180) DAY;" >> deletemysql.sql
+echo "UPDATE wp_posts SET post_modified_gmt = CURRENT_TIMESTAMP - INTERVAL FLOOR(RAND() * 180) DAY;" >> deletemysql.sql
 wp db query --allow-root < deletemysql.sql
 echo "UPDATE \`wp_posts\` SET \`post_status\` = 'publish' where \`post_status\` = 'draft' and \`post_type\` = 'post';" > deletemysql.sql
 wp db query --allow-root < deletemysql.sql
