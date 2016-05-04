@@ -29,12 +29,12 @@ echo "leeedwardjoon" > deleteuserwp; clear
 echo "leeedwardjoon" > deletepasswp; clear
 echo "leeedwardjoon@gmail.com" > deleteemailwp; clear
 #untuk data clone
-mkdir -p /home/clone
-cat /deletedomain >> /home/clone/domainawal
-cat /deleteekstension >> /home/clone/ekstensionawal
-cat /deleteinisial >> /home/clone/inisialawal
-cat /deleteuserdb >> /home/clone/userdbawal
-cat /deletepassdb >> /home/clone/passdbawal
+mkdir -p /home/clone2
+cat /deletedomain >> /home/clone2/domainawal
+cat /deleteekstension >> /home/clone2/ekstensionawal
+cat /deleteinisial >> /home/clone2/inisialawal
+cat /deleteuserdb >> /home/clone2/userdbawal
+cat /deletepassdb >> /home/clone2/passdbawal
 #install x2go
 sudo apt-get install apt-transport-https
 apt-get update && apt-get -y install aptitude
