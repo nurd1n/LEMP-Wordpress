@@ -151,8 +151,22 @@ wp widget delete $(wp widget list sidebar-1 --format=ids --allow-root) --allow-r
 wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) --allow-root
 #install & activate theme
 printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1 > /deletetheme
-echo "wp theme install http://moviestreamfullhd.com/theme/$(cat /deletetheme).zip --activate --allow-root" | bash -
-echo "wp theme activate $(cat /deletetheme) --allow-root" | bash -
+echo "curl -L http://moviestreamfullhd.com/theme/$(cat /deletetheme).zip -o /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletetheme).zip" | bash -
+eval $(echo "cd /home/www/$(cat /deletedomain)/wp-content/themes")
+echo "unzip $(cat /deletetheme)" | bash -
+echo "rm -f $(cat /deletetheme).zip" | bash -
+tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g'> /deletenametheme
+echo "mv $(cat /deletetheme) $(cat /deletenametheme)" | bash -
+echo "sed -i 's|$(cat /deletetheme)|$(cat /deletenametheme)|g' /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletenametheme)/style.css" | bash -
+echo "mv $(cat /deletenametheme)/style.css $(cat /deletenametheme)/style2.css | bash -
+echo "shuf $(cat /deletenametheme)/style2.css > $(cat /deletenametheme)/style.css | bash -
+echo "rm -f $(cat /deletenametheme)/style2.css | bash -
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/responsive1 | shuf | awk 'FNR==1{print "@media only screen and (min-width: 768px) and (max-width: 960px) {"}{print}' | sed '$ a }' > /deletethemeres
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/responsive2 | shuf | awk 'FNR==1{print "@media only screen and (max-width: 767px) {"}{print}' | sed '$ a }' >> /deletethemeres
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/responsive3 | shuf | awk 'FNR==1{print "@media only screen and (min-width: 480px) and (max-width: 767px) {"}{print}' | sed '$ a }' >> /deletethemeres
+echo "cat /deletethemeres | awk 'FNR==1{print \"/* Theme Name: $(cat /deletenametheme) */\"}{print}' > /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletenametheme)/responsive.css" | bash -
+eval $(echo "cd /home/www/$(cat /deletedomain)")
+echo "wp theme activate $(cat /deletenametheme) --allow-root" | bash -
 #delete theme unactive
 wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --allow-root
 #install plugin
@@ -188,8 +202,7 @@ rm -f uploads.tar.gz
 eval $(echo "cd /home/www/$(cat /deletedomain)")
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
-echo "wp theme install http://moviestreamfullhd.com/theme/$(cat /deletetheme).zip --activate --allow-root" | bash -
-echo "wp theme activate $(cat /deletetheme) --allow-root" | bash
+echo "wp theme activate $(cat /deletenametheme) --allow-root" | bash
 wp core update-db --allow-root
 wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
