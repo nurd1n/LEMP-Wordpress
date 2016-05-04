@@ -1,0 +1,33 @@
+body{margin: 0;}
+.wrapper{width: 480px;}
+.header{width: 480px;}
+.site-logo{width: 480px;}
+.site-logo-text{width: 100%;margin: 25px 0 30px 0;text-align: center;}
+h1.site-title a{float: none;}
+.header-ads{width: 480px;}
+.bottom-ads{width: 480px;}
+.post-ads-top{width: 480px;margin-top: 30px;padding: 0;}
+.post-ads-bottom{width: 480px;margin-top: 30px;padding: 0;}
+.content{width: 480px;}
+.post{width: 480px;height: auto;padding-bottom: 0;}
+.post-desc{width: 480px;float: left;padding-right: 0;}
+.post-thumb{width: 480px;}
+.post-thumb img{width: 480px;}
+.search-form input {width: 448px;}
+.sidebar{width: 480px;}
+.single-info{width: auto;}
+.single img{max-width: 480px;}
+.random{width: 480px;}
+.random li{width: 480px;float: left;padding-bottom: 15px;border-bottom: 1px solid #ddd;}
+.random img{width: 480px;float: left;}
+h1{width: 480px;}
+h2{width: 480px;}
+h4{width: 480px;float: left;font-size: 17px;line-height: 32px;}
+textarea#comment {width: 450px;padding: 15px;margin: 0;}
+input#submit {width: 480px;}
+#gallery-1 .gallery-item{width: 83.5px !important;}
+.footer{font-size: 12px;}
+.footer a{font-size: 12px;}
+cite.fn{font-size: 16px;font-weight: bold;font-style: normal;}
+cite.fn a{font-size: 16px;font-weight: bold;font-style: normal;}
+.nav{width: 480px;margin: 0;}
