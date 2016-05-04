@@ -123,3 +123,7 @@ rm -f read*
 rm -f license.txt
 rm -f domain.tar.gz
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
+shred -v -n 25 -u -z *.xml
+shred -v -n 25 -u -z *.xml.gz
+wp plugin update --all --allow-root
+chmod 777 wp-content
