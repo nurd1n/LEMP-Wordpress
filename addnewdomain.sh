@@ -33,12 +33,12 @@ echo -n "Apa email wordpress yg diinginkan :
 read emailwp
 echo "$emailwp" > deleteemailwp; clear
 #untuk data clone
-mkdir -p /home/clone
-cat /deletedomain >> /home/clone/domainawal
-cat /deleteekstension >> /home/clone/ekstensionawal
-cat /deleteinisial >> /home/clone/inisialawal
-cat /deleteuserdb >> /home/clone/userdbawal
-cat /deletepassdb >> /home/clone/passdbawal
+mkdir -p /home/clone2
+cat /deletedomain >> /home/clone2/domainawal
+cat /deleteekstension >> /home/clone2/ekstensionawal
+cat /deleteinisial >> /home/clone2/inisialawal
+cat /deleteuserdb >> /home/clone2/userdbawal
+cat /deletepassdb >> /home/clone2/passdbawal
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
 #get ip adress
 ifconfig venet0:0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' > deleteipadress
