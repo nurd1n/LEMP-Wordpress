@@ -1,0 +1,17 @@
+body{margin: 0;}
+.wrapper{width: 728px;}
+.header{width: 728px;}
+.site-logo{width: 498px;}
+.site-logo-text{width: 498px;}
+.header-ads{width: 728px;}
+.bottom-ads{width: 728px;}
+.post-ads-top{width: 728px;margin-top: 30px;padding: 0;}
+.post-ads-bottom{width: 728px;margin-top: 30px;padding: 0;}
+.content{width: 728px;}
+.sidebar{width: 728px;}
+.sidebar .widget-title{margin: 15px 0 15px 0;}
+.random{width: 728px;}
+.random li{width: 728px;height: 260px;float: left;padding-bottom: 30px;border-bottom: 1px solid #ddd;}
+.random img{width: 360px;float: left;}
+h4{width: 348px;float: right;font-size: 28px;line-height: 32px;}
+input#submit {width: 728px;}	
