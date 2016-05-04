@@ -28,6 +28,13 @@ echo "pass db wp : $(cat /deletepassdb)" >> /home/database.txt
 echo "leeedwardjoon" > deleteuserwp; clear
 echo "leeedwardjoon" > deletepasswp; clear
 echo "leeedwardjoon@gmail.com" > deleteemailwp; clear
+#untuk data clone
+mkdir -p /home/clone
+cat /deletedomain >> /home/clone/domainawal
+cat /deleteekstension >> /home/clone/ekstensionawal
+cat /deleteinisial >> /home/clone/inisialawal
+cat /deleteuserdb >> /home/clone/userdbawal
+cat /deletepassdb >> /home/clone/passdbawal
 #install x2go
 sudo apt-get install apt-transport-https
 apt-get update && apt-get -y install aptitude
