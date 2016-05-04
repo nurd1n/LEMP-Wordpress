@@ -1,0 +1,46 @@
+body{margin: 0;}
+.wrapper{width: 300px;}
+.header{width: 300px;margin-top: 0px;}
+.site-logo{width: 100%;margin: 25px 0;text-align: center;}
+.site-logo-text{width: 100%;margin: 25px 0 30px 0;text-align: center;}
+h1.site-title a{float: none;}
+.header-ads{width: 300px;}
+.bottom-ads{width: 300px;margin-bottom: 15px;}
+.post-ads-top{width: 300px;margin-top: 30px;padding: 0;}
+.post-ads-bottom{width: 300px;margin-top: 30px;margin-bottom: 30px;padding: 0;}
+.search-form{float: none;text-align: center;}
+.search-form input{width: 268px;}
+h1{width: 300px;font-size: 24px;}
+h2{font-size: 24px;}
+h3{font-size: 18px;}
+h4{width: 300px;float: left;font-size: 17px;padding-top: 10px;}
+.content{width: 300px;margin: 0;}
+.post{width: 300px;height: auto;padding-bottom: 0;}
+.post-desc{width: 300px;float: left;padding-right: 0;}
+.content p{margin: 10px 0 25px 0;}
+.post-thumb{width: 300px;}
+.post-thumb img{width: 300px;height: auto;}
+.post-title{width: 300px;float: left;margin-top: 10px;}
+.single{margin-top: 20px;}
+.single-info{width: 270px;}
+.sidebar{width: 300px;}
+.sidebar .widget-title{margin: 15px 0 15px 0;}
+.single img{max-width: 300px;}
+.random{width: 300px;}
+.random li{width: 300px;float: left;padding-bottom: 15px;border-bottom: 1px solid #ddd;}
+.random img{width: 300px;float: left;}
+#respond h3 {margin: 0px 0 25px 0;}
+label{padding: 0;}
+input#author{width: 268px;margin-bottom: 10px;}
+input#url{width: 268px;margin-bottom: 10px;}
+input#email{width: 268px;margin-bottom: 10px;}
+input#url{width: 268px;}
+textarea#comment{width: 268px;padding: 15px;margin: 0;}
+input#submit{width: 300px;}
+.commentlist{margin-bottom: 25px;}
+#gallery-1 .gallery-item{width: 47.5px !important;}
+.footer{font-size: 12px;}
+.footer a{font-size: 12px;}
+cite.fn{font-size: 16px;font-weight: bold;font-style: normal;}
+cite.fn a{font-size: 16px;font-weight: bold;font-style: normal;}
+.nav{width: 300px;margin: 0;}
