@@ -213,3 +213,4 @@ echo "wp theme activate $(cat /deletenametheme) --allow-root" | bash
 wp core update-db --allow-root
 wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts --allow-root
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
+echo "chmod 777 /home/www/$(cat /deletedomain)/wp-content" | bash -
