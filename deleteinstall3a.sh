@@ -259,9 +259,10 @@ echo "turner;$(wp user create turner turner@domain.com --role=author --display_n
 echo "turner" >> /home/ebay/artikel/data/author.txt
 cp /home/ebay/artikel/data/author.txt /home/ebay/attachment/data/author.txt
 chown -R www-data:www-data *
-echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
 #download file yg dibutuhkan
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /home/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /home/wordpressping.txt
 curl -L http://moviestreamfullhd.com/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
+echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
+echo "chmod 777 /home/www/$(cat /deletedomain)/wp-content" | bash -
