@@ -119,3 +119,4 @@ chmod 755 extra.sh
 ./extra.sh
 rm -f extra.sh
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
+echo "chmod 777 /home/www/$(cat /deletedomain)/wp-content" | bash -
