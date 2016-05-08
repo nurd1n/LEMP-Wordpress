@@ -115,7 +115,7 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/default.vcl -o delet
 echo "$(cat deletedefault.vcl)" > /etc/varnish/default.vcl
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
 #get ip adress
-ifconfig venet0:0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' > deleteipadress
+curl -s http://ipv4.icanhazip.com > deleteipadress
 echo "cat deleteblock | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' -e 's/ipadress/$(cat deleteipadress)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
 echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension) /etc/nginx/sites-enabled/$(cat deletedomain).$(cat deleteekstension)" | bash -
 echo "mkdir -p /home/www/$(cat deletedomain)" | bash -
