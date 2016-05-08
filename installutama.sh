@@ -211,3 +211,4 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /home/wordpressping.txt
 curl -L http://moviestreamfullhd.com/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
+echo "chmod 777 /home/www/$(cat /deletedomain)/wp-content" | bash -
