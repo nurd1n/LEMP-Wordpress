@@ -427,6 +427,7 @@ echo "turner" >> /home/wallpaper/artikel/data/author.txt
 cp /home/wallpaper/artikel/data/author.txt /home/wallpaper/attachment/data/author.txt
 chown -R www-data:www-data *
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
+echo "chmod 777 /home/www/$(cat /deletedomain)/wp-content" | bash -
 #download file yg dibutuhkan
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /home/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
