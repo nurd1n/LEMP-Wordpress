@@ -168,6 +168,8 @@ echo "sed -i 's|$(cat /deletetheme)|$(cat /deletenametheme)|g' /home/www/$(cat /
 echo "mv $(cat /deletenametheme)/style.css $(cat /deletenametheme)/style2.css" | bash -
 echo "shuf $(cat /deletenametheme)/style2.css > $(cat /deletenametheme)/style.css" | bash -
 echo "rm -f $(cat /deletenametheme)/style2.css" | bash -
+echo "sed -i 's|$(cat /deletetheme)|$(cat /deletenametheme)|g' /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletenametheme)/comments.php" | bash -
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/function | shuf | awk 'FNR==1{print "<?php"}{print}' | sed '$ a ?>' | sed 's|hrqshn|$(cat /deletedomain)|g' > /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletenametheme)/functions.php" | bash -
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/responsive1 | shuf | awk 'FNR==1{print "@media only screen and (min-width: 768px) and (max-width: 960px) {"}{print}' | sed '$ a }' > /deletethemeres
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/responsive2 | shuf | awk 'FNR==1{print "@media only screen and (max-width: 767px) {"}{print}' | sed '$ a }' >> /deletethemeres
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/responsive3 | shuf | awk 'FNR==1{print "@media only screen and (min-width: 480px) and (max-width: 767px) {"}{print}' | sed '$ a }' >> /deletethemeres
