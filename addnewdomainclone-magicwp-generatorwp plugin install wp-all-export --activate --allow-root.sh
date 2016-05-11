@@ -1,0 +1,91 @@
+cd /
+clear && clear
+echo -n "Apa nama domain anda (tanpa dot com) :
+"
+read domain
+echo "$domain" > deletedomain; clear
+echo -n "Apa nama ekstension domain anda (com, net, org, xyz, dll) :
+"
+read ekstension
+echo "$ekstension" > deleteekstension; clear
+echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)" >> /home/database.txt
+echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
+"
+read passmysql
+echo "$passmysql" > deletepassmysql; clear
+echo -n "Apa inisial blog anda (huruf kecil semua) :
+"
+read inisial
+echo "$inisial" > deleteinisial; clear
+echo -n "Apa keyword blog anda (huruf kecil semua) :
+"
+read keyword
+echo "$keyword" > deletekeyword; clear
+tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deleteuserdb; clear
+tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deletepassdb; clear
+echo "user db wp : $(cat /deleteuserdb)" >> /home/database.txt
+echo "pass db wp : $(cat /deletepassdb)" >> /home/database.txt
+echo "leeedwardjoon" > deleteuserwp; clear
+echo "leeedwardjoon" > deletepasswp; clear
+echo "leeedwardjoon@gmail.com" > deleteemailwp; clear
+#untuk data clone
+mkdir -p /home/clone2
+cat /deletedomain >> /home/clone2/domainawal
+cat /deleteekstension >> /home/clone2/ekstensionawal
+cat /deleteinisial >> /home/clone2/inisialawal
+cat /deleteuserdb >> /home/clone2/userdbawal
+cat /deletepassdb >> /home/clone2/passdbawal
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
+#get ip adress
+curl -s http://ipv4.icanhazip.com > deleteipadress
+echo "cat deleteblock | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' -e 's/ipadress/$(cat deleteipadress)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
+echo "sudo ln -s /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension) /etc/nginx/sites-enabled/$(cat deletedomain).$(cat deleteekstension)" | bash -
+echo "mkdir -p /home/www/$(cat deletedomain)" | bash -
+sudo service nginx restart; sudo service php5-fpm restart; service mysql restart; service varnish restart
+# Install Wordpress and Configure the Database
+eval $(echo "cd /home/www/$(cat /deletedomain)")
+# Install wordpress terbaru
+wp core download --version=4.5 --allow-root
+chown -R www-data:www-data *
+# Create database, ganti password, wordpressdb
+echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
+echo "wp core config --dbname=wp_$(cat /deletedomain) --dbuser=$(cat /deleteuserdb) --dbpass=$(cat /deletepassdb) --allow-root" | bash -
+echo "wp core install --url=www.$(cat /deletedomain).$(cat /deleteekstension) --title=$(cat /deletedomain) --admin_user=$(cat /deleteuserwp) --admin_password=$(cat /deletepasswp) --admin_email=$(cat /deleteemailwp) --allow-root" | bash -
+#delete all spam comments.
+wp comment delete $(wp comment list --status=spam --allow-root) --force --allow-root
+#delete all approved comments.
+wp comment delete $(wp comment list --status=approve --allow-root) --force --allow-root
+#delete all trash comments.
+wp comment delete $(wp comment list --status=trash --allow-root) --allow-root
+#Hapus page tanpa trash dulu
+wp post delete $(wp post list --post_type='page' --allow-root) --force --allow-root
+#Hapus post tanpa trash dulu
+wp post delete $(wp post list --post_type='post' --allow-root) --force --allow-root
+#Hapus attachment tanpa trash dulu
+wp post delete $(wp post list --post_type='attachment' --allow-root) --force --allow-root
+#Hapus trash
+wp post delete $(wp post list --post_status=trash --allow-root) --force --allow-root
+#delete widget
+wp widget delete $(wp widget list sidebar-1 --format=ids --allow-root) --allow-root
+#Delete inactive plugins
+wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) --allow-root
+#install plugin
+wp plugin install nginx-helper --allow-root
+wp plugin install nginx-compatibility --activate --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
+wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate --allow-root
+wp plugin install http://moviestreamfullhd.com/plugin/magic-wallpress.zip --activate --allow-root
+wp plugin install wp-all-export --activate --allow-root
+chown -R www-data:www-data *
+echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's|lailykitchen.xyz|$(cat /deletedomain).$(cat /deleteekstension)|g' -e 's|lailykitchen|$(cat /deletedomain)|g' -e 's|kitchen1|$(cat /deletekeyword)|g' -e 's|Laily|$(cat /deleteinisial | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|Kitchen|$(cat /deletekeyword | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|laily|$(cat /deleteinisial)|g' -e 's|kitchen|$(cat /deletekeyword)|g' -e 's|f0d7c9d7-d72b-46c2-8ab6-b74165057961|$(cat /etc/varnish/secret)|g' > wp_$(cat /deletedomain).sql" | bash -
+echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
+echo "rm -f wp_$(cat /deletedomain).sql" | bash -
+cd wp-content/uploads
+curl -L http://moviestreamfullhd.com/wpdatabase/uploads.tar.gz -o uploads.tar.gz
+tar -zxvf uploads.tar.gz
+rm -f uploads.tar.gz
+eval $(echo "cd /home/www/$(cat /deletedomain)")
+wp core update-db --allow-root
+wp plugin delete no-ping-wait wordpress-ping-optimizer wp-limit-login-attempts adsense-privacy-policy advanced-ads akismet all-in-one-seo-pack-pro forget-about-shortcode-buttons google-sitemap-generator udinra-all-image-sitemap wp-all-import-pro,active wp-freshstart wp-seo-html-sitemap --allow-root
+echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
+echo "chmod 777 /home/www/$(cat /deletedomain)/wp-content" | bash -
