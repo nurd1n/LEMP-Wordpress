@@ -65,10 +65,10 @@ wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) -
 #install plugin
 wp plugin install nginx-helper --allow-root
 wp plugin install nginx-compatibility --activate --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
 wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate --allow-root
 wp plugin install http://moviestreamfullhd.com/plugin/magic-wallpress.zip --activate --allow-root
 wp plugin install wp-all-export --activate --allow-root
+wp plugin activate wp-all-export --allow-root
 chown -R www-data:www-data *
 echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's|lailykitchen.xyz|$(cat /deletedomain).$(cat /deleteekstension)|g' -e 's|lailykitchen|$(cat /deletedomain)|g' -e 's|kitchen1|$(cat /deletekeyword)|g' -e 's|Laily|$(cat /deleteinisial | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|Kitchen|$(cat /deletekeyword | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|laily|$(cat /deleteinisial)|g' -e 's|kitchen|$(cat /deletekeyword)|g' -e 's|f0d7c9d7-d72b-46c2-8ab6-b74165057961|$(cat /etc/varnish/secret)|g' > wp_$(cat /deletedomain).sql" | bash -
 echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
