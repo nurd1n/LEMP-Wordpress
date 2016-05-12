@@ -160,7 +160,7 @@ rm -f domain.tar.gz
 shred -v -n 25 -u -z *.xml
 shred -v -n 25 -u -z *.xml.gz
 #random plugin
-tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g' > /deletenameplugin
+tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /deletenameplugin
 echo "echo '<?php /* Plugin Name: $(cat /deletenameplugin) */ ?>' > /home/www/$(cat /deletedomain)/wp-content/plugins/$(cat /deletenameplugin).php" | bash -
 echo "wp plugin activate $(cat /deletenameplugin) --allow-root" | bash -
 wp plugin update --all --allow-root
