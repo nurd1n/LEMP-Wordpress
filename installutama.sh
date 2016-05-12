@@ -226,7 +226,7 @@ wp plugin install http://moviestreamfullhd.com/plugin/wp-freshstart.zip --activa
 wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
 wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate  --allow-root
 #random plugin
-tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g' > /deletenameplugin
+tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /deletenameplugin
 echo "echo '<?php /* Plugin Name: $(cat /deletenameplugin) */ ?>' > /home/www/$(cat /deletedomain)/wp-content/plugins/$(cat /deletenameplugin).php" | bash -
 echo "wp plugin activate $(cat /deletenameplugin) --allow-root" | bash -
 chown -R www-data:www-data *
