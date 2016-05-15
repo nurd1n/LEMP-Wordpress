@@ -10,6 +10,23 @@ mkdir -p /home/wallpaperdomain1ekstension1/artikel/spin/par4/{1,2,3,4,5}
 mkdir -p /home/wallpaperdomain1ekstension1/artikel/spin/par5/{1,2,3,4,5}
 mkdir -p /home/wallpaperdomain1ekstension1/attachment/{data,done,spin,template,id}
 mkdir -p /home/wallpaperdomain1ekstension1/attachment/spin/{par1,par2,par3}
+# random user
+names | sed 's| ||g' | tr A-Z a-z > /deletekalomnuytulo
+names | sed 's| ||g' | tr A-Z a-z > /deletemilley
+names | sed 's| ||g' | tr A-Z a-z > /deletemartha
+names | sed 's| ||g' | tr A-Z a-z > /deleteedward
+names | sed 's| ||g' | tr A-Z a-z > /deletesamuel
+names | sed 's| ||g' | tr A-Z a-z > /deletedaniel
+names | sed 's| ||g' | tr A-Z a-z > /deletecason
+names | sed 's| ||g' | tr A-Z a-z > /deletevandiver
+names | sed 's| ||g' | tr A-Z a-z > /deleteteresa
+names | sed 's| ||g' | tr A-Z a-z > /deletecollins
+names | sed 's| ||g' | tr A-Z a-z > /deletecarole
+names | sed 's| ||g' | tr A-Z a-z > /deletetomlin
+names | sed 's| ||g' | tr A-Z a-z > /deletesharoon
+names | sed 's| ||g' | tr A-Z a-z > /deleteissac
+names | sed 's| ||g' | tr A-Z a-z > /deletesamantha
+names | sed 's| ||g' | tr A-Z a-z > /deleteturner
 #url folder
 touch /home/wallpaperdomain1ekstension1/url/keyword.txt
 wget https://github.com/nurd1n/Wallpaper-Script/raw/url/start1.sh --no-check-certificate --directory-prefix=/home/wallpaperdomain1ekstension1/url
@@ -203,23 +220,6 @@ chmod 755 /home/wallpaperdomain1ekstension1/image/*.sh
 chmod 755 /home/wallpaperdomain1ekstension1/image/done/*.sh
 chmod 755 /home/wallpaperdomain1ekstension1/artikel/*.sh
 chmod 755 /home/wallpaperdomain1ekstension1/attachment/*.sh
-# random user
-names | sed 's| ||g' | tr A-Z a-z > /deletekalomnuytulo
-names | sed 's| ||g' | tr A-Z a-z > /deletemilley
-names | sed 's| ||g' | tr A-Z a-z > /deletemartha
-names | sed 's| ||g' | tr A-Z a-z > /deleteedward
-names | sed 's| ||g' | tr A-Z a-z > /deletesamuel
-names | sed 's| ||g' | tr A-Z a-z > /deletedaniel
-names | sed 's| ||g' | tr A-Z a-z > /deletecason
-names | sed 's| ||g' | tr A-Z a-z > /deletevandiver
-names | sed 's| ||g' | tr A-Z a-z > /deleteteresa
-names | sed 's| ||g' | tr A-Z a-z > /deletecollins
-names | sed 's| ||g' | tr A-Z a-z > /deletecarole
-names | sed 's| ||g' | tr A-Z a-z > /deletetomlin
-names | sed 's| ||g' | tr A-Z a-z > /deletesharoon
-names | sed 's| ||g' | tr A-Z a-z > /deleteissac
-names | sed 's| ||g' | tr A-Z a-z > /deletesamantha
-names | sed 's| ||g' | tr A-Z a-z > /deleteturner
 # tambah user
 echo "$(cat /deletemilley);$(wp user create $(cat /deletemilley) $(cat /deletemilley)@domain.com --role=author --display_name=$(cat /deletemilley | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*34 --porcelain --allow-root)" > /home/userdomain1ekstension1.txt
 echo "$(cat /deletemilley)" > /home/wallpaperdomain1ekstension1/artikel/data/author.txt
