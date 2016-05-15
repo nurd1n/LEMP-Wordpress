@@ -47,6 +47,8 @@ sudo apt-get install at sendmail ffmpeg midori bleachbit gedit terminator filezi
 #install mechanize & beautifulsoup
 easy_install mechanize
 easy_install BeautifulSoup4
+#install names
+pip install names
 cd /
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/nginx.conf -o deletenginx.conf
 echo "$(cat deletenginx.conf)" > /etc/nginx/nginx.conf
