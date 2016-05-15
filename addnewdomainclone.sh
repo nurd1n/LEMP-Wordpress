@@ -1,6 +1,6 @@
 cd /
 clear && clear
-echo -n "Apa nama domain anda (tanpa dot com) :
+echo -n "Apa nama domain anda (tanpa dot com) :u
 "
 read domain
 echo "$domain" > deletedomain; clear
@@ -143,7 +143,7 @@ echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/extra | sed -e
 chmod 755 extra.sh
 ./extra.sh
 rm -f extra.sh
-echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's|lailykitchen.xyz|$(cat /deletedomain).$(cat /deleteekstension)|g' -e 's|lailykitchen|$(cat /deletedomain)|g' -e 's|kitchen1|$(cat /deletekeyword)|g' -e 's|Laily|$(cat /deleteinisial | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|Kitchen|$(cat /deletekeyword | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|laily|$(cat /deleteinisial)|g' -e 's|kitchen|$(cat /deletekeyword)|g' -e 's|f0d7c9d7-d72b-46c2-8ab6-b74165057961|$(cat /etc/varnish/secret)|g' > wp_$(cat /deletedomain).sql" | bash -
+echo "curl -L http://moviestreamfullhd.com/wpdatabase/domain.sql | sed -e 's|admin@lailykitchen|$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)@lailykitchen|g' -e 's|lailykitchen.xyz|$(cat /deletedomain).$(cat /deleteekstension)|g' -e 's|lailykitchen|$(cat /deletedomain)|g' -e 's|kitchen1|$(cat /deletekeyword)|g' -e 's|Laily|$(cat /deleteinisial | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|Kitchen|$(cat /deletekeyword | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|laily|$(cat /deleteinisial)|g' -e 's|kitchen|$(cat /deletekeyword)|g' -e 's|f0d7c9d7-d72b-46c2-8ab6-b74165057961|$(cat /etc/varnish/secret)|g' > wp_$(cat /deletedomain).sql" | bash -
 echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletedomain) < wp_$(cat /deletedomain).sql" | bash -
 echo "rm -f wp_$(cat /deletedomain).sql" | bash -
 cd wp-content/uploads
