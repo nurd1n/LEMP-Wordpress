@@ -204,6 +204,7 @@ chmod 755 /home/wallpaperdomain1ekstension1/image/done/*.sh
 chmod 755 /home/wallpaperdomain1ekstension1/artikel/*.sh
 chmod 755 /home/wallpaperdomain1ekstension1/attachment/*.sh
 # random user
+names | sed 's| ||g' | tr A-Z a-z > /deletekalomnuytulo
 names | sed 's| ||g' | tr A-Z a-z > /deletemilley
 names | sed 's| ||g' | tr A-Z a-z > /deletemartha
 names | sed 's| ||g' | tr A-Z a-z > /deleteedward
