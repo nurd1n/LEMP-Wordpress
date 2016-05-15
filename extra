@@ -203,37 +203,53 @@ chmod 755 /home/wallpaperdomain1ekstension1/image/*.sh
 chmod 755 /home/wallpaperdomain1ekstension1/image/done/*.sh
 chmod 755 /home/wallpaperdomain1ekstension1/artikel/*.sh
 chmod 755 /home/wallpaperdomain1ekstension1/attachment/*.sh
+# random user
+names | sed 's| ||g' | tr A-Z a-z > /deletemilley
+names | sed 's| ||g' | tr A-Z a-z > /deletemartha
+names | sed 's| ||g' | tr A-Z a-z > /deleteedward
+names | sed 's| ||g' | tr A-Z a-z > /deletesamuel
+names | sed 's| ||g' | tr A-Z a-z > /deletedaniel
+names | sed 's| ||g' | tr A-Z a-z > /deletecason
+names | sed 's| ||g' | tr A-Z a-z > /deletevandiver
+names | sed 's| ||g' | tr A-Z a-z > /deleteteresa
+names | sed 's| ||g' | tr A-Z a-z > /deletecollins
+names | sed 's| ||g' | tr A-Z a-z > /deletecarole
+names | sed 's| ||g' | tr A-Z a-z > /deletetomlin
+names | sed 's| ||g' | tr A-Z a-z > /deletesharoon
+names | sed 's| ||g' | tr A-Z a-z > /deleteissac
+names | sed 's| ||g' | tr A-Z a-z > /deletesamantha
+names | sed 's| ||g' | tr A-Z a-z > /deleteturner
 # tambah user
-echo "milley;$(wp user create milley milley@domain.com --role=author --display_name=Milley --user_pass=GhfrTDuy%67g^$*34 --porcelain --allow-root)" > /home/userdomain1ekstension1.txt
-echo "milley" > /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "martha;$(wp user create martha martha@domain.com --role=author --display_name=Martha --user_pass=GhfrTDuy%67g^$*35 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "martha" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "edward;$(wp user create edward edward@domain.com --role=author --display_name=Edward --user_pass=GhfrTDuy%67g^$*36 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "edward" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "samuel;$(wp user create samuel samuel@domain.com --role=author --display_name=Samuel --user_pass=GhfrTDuy%67g^$*37 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "samuel" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "daniel;$(wp user create daniel daniel@domain.com --role=author --display_name=Daniel --user_pass=GhfrTDuy%67g^$*38 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "daniel" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "cason;$(wp user create cason cason@domain.com --role=author --display_name=Cason --user_pass=GhfrTDuy%67g^$*39 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "cason" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "vandiver;$(wp user create vandiver vandiver@domain.com --role=author --display_name=Vandiver --user_pass=GhfrTDuy%67g^$*40 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "vandiver" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "teresa;$(wp user create teresa teresa@domain.com --role=author --display_name=Teresa --user_pass=GhfrTDuy%67g^$*41 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "teresa" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "collins;$(wp user create collins collins@domain.com --role=author --display_name=Collins --user_pass=GhfrTDuy%67g^$*42 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "collins" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "carole;$(wp user create carole carole@domain.com --role=author --display_name=Carole --user_pass=GhfrTDuy%67g^$*43 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "carole" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "tomlin;$(wp user create tomlin tomlin@domain.com --role=author --display_name=Tomlin --user_pass=GhfrTDuy%67g^$*44 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "tomlin" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "sharoon;$(wp user create sharoon sharoon@domain.com --role=author --display_name=Sharoon --user_pass=GhfrTDuy%67g^$*45 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "sharoon" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "issac;$(wp user create issac issac@domain.com --role=author --display_name=Issac --user_pass=GhfrTDuy%67g^$*46 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "issac" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "samantha;$(wp user create samantha samantha@domain.com --role=author --display_name=Samantha --user_pass=GhfrTDuy%67g^$*47 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "samantha" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
-echo "turner;$(wp user create turner turner@domain.com --role=author --display_name=Turner --user_pass=GhfrTDuy%67g^$*48 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
-echo "turner" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletemilley);$(wp user create $(cat /deletemilley) $(cat /deletemilley)@domain.com --role=author --display_name=$(cat /deletemilley | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*34 --porcelain --allow-root)" > /home/userdomain1ekstension1.txt
+echo "$(cat /deletemilley)" > /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletemartha);$(wp user create $(cat /deletemartha) $(cat /deletemartha)@domain.com --role=author --display_name=$(cat /deletemartha | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*35 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletemartha)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deleteedward);$(wp user create $(cat /deleteedward) $(cat /deleteedward)@domain.com --role=author --display_name=$(cat /deleteedward | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*36 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deleteedward)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletesamuel);$(wp user create $(cat /deletesamuel) $(cat /deletesamuel)@domain.com --role=author --display_name=$(cat /deletesamuel | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*37 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletesamuel)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletedaniel);$(wp user create $(cat /deletedaniel) $(cat /deletedaniel)@domain.com --role=author --display_name=$(cat /deletedaniel | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*38 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletedaniel)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletecason);$(wp user create $(cat /deletecason) $(cat /deletecason)@domain.com --role=author --display_name=$(cat /deletecason | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*39 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletecason)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletevandiver);$(wp user create $(cat /deletevandiver) $(cat /deletevandiver)@domain.com --role=author --display_name=$(cat /deletevandiver | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*40 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletevandiver)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deleteteresa);$(wp user create $(cat /deleteteresa) $(cat /deleteteresa)@domain.com --role=author --display_name=$(cat /deleteteresa | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*41 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deleteteresa)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletecollins);$(wp user create $(cat /deletecollins) $(cat /deletecollins)@domain.com --role=author --display_name=$(cat /deletecollins | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*42 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletecollins)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletecarole);$(wp user create $(cat /deletecarole) $(cat /deletecarole)@domain.com --role=author --display_name=$(cat /deletecarole | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*43 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletecarole)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletetomlin);$(wp user create $(cat /deletetomlin) $(cat /deletetomlin)@domain.com --role=author --display_name=$(cat /deletetomlin | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*44 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletetomlin)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletesharoon);$(wp user create $(cat /deletesharoon) $(cat /deletesharoon)@domain.com --role=author --display_name=$(cat /deletesharoon | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*45 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletesharoon)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deleteissac);$(wp user create $(cat /deleteissac) $(cat /deleteissac)@domain.com --role=author --display_name=$(cat /deleteissac | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*46 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deleteissac)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deletesamantha);$(wp user create $(cat /deletesamantha) $(cat /deletesamantha)@domain.com --role=author --display_name=$(cat /deletesamantha | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*47 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deletesamantha)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
+echo "$(cat /deleteturner);$(wp user create $(cat /deleteturner) $(cat /deleteturner)@domain.com --role=author --display_name=$(cat /deleteturner | sed -e 's/+/ /g' -e 's/.*/\L&/; s/[a-z]*/\u&/g') --user_pass=$(tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1)*48 --porcelain --allow-root)" >> /home/userdomain1ekstension1.txt
+echo "$(cat /deleteturner)" >> /home/wallpaperdomain1ekstension1/artikel/data/author.txt
 cp /home/wallpaperdomain1ekstension1/artikel/data/author.txt /home/wallpaperdomain1ekstension1/attachment/data/author.txt
 chown -R www-data:www-data *
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
