@@ -165,12 +165,12 @@ curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/spin552 -o /home/
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/spin553 -o /home/wallpaperdomain1ekstension1/artikel/spin/par5/5/3
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/spin554 -o /home/wallpaperdomain1ekstension1/artikel/spin/par5/5/4
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/spin555 -o /home/wallpaperdomain1ekstension1/artikel/spin/par5/5/5
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template1 -o /home/wallpaperdomain1ekstension1/artikel/template/1
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template2 -o /home/wallpaperdomain1ekstension1/artikel/template/2
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template3 -o /home/wallpaperdomain1ekstension1/artikel/template/3
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template4 -o /home/wallpaperdomain1ekstension1/artikel/template/4
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template5 -o /home/wallpaperdomain1ekstension1/artikel/template/5
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template6 -o /home/wallpaperdomain1ekstension1/artikel/template/6
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template1 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/artikel/template/1" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template2 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/artikel/template/2" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template3 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/artikel/template/3" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template4 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/artikel/template/4" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template5 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/artikel/template/5" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/artikel/template6 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/artikel/template/6" | bash -
 #folder attachment
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/sitemap | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaperdomain1ekstension1/attachment/data/sitemap" | bash -
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/sql1 | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaperdomain1ekstension1/attachment/data/sql1" | bash -
@@ -186,9 +186,9 @@ curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin23 -o /hom
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin31 | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaperdomain1ekstension1/attachment/spin/par3/1" | bash -
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/spin32 -o /home/wallpaperdomain1ekstension1/attachment/spin/par3/2
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/tanggal -o /home/wallpaperdomain1ekstension1/attachment/spin/tanggal
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template1 -o /home/wallpaperdomain1ekstension1/attachment/template/1
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template2 -o /home/wallpaperdomain1ekstension1/attachment/template/2
-curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template3 -o /home/wallpaperdomain1ekstension1/attachment/template/3
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template1 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/attachment/template/1" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template2 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/attachment/template/2" | bash -
+echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/template3 | sed 's/gallery/$(cat /deletegallery)/g' > /home/wallpaperdomain1ekstension1/attachment/template/3" | bash -
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/start10.sh -o /home/wallpaperdomain1ekstension1/attachment/start10.sh
 curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/ask.py -o /home/wallpaperdomain1ekstension1/attachment/ask.py
 echo "curl -L https://github.com/nurd1n/Wallpaper-Script/raw/attachment/a.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' > /home/wallpaperdomain1ekstension1/attachment/a.html" | bash -
