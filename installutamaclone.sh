@@ -211,7 +211,7 @@ wp plugin install advanced-ads --activate --allow-root
 wp plugin install adsense-privacy-policy --activate --allow-root
 wp plugin install udinra-all-image-sitemap --activate --allow-root
 wp plugin install wordpress-ping-optimizer --activate --allow-root
-wp plugin install forget-about-shortcode-buttons --activate --allow-root
+wp plugin install https://github.com/wp-plugins/forget-about-shortcode-buttons/archive/master.zip --activate --allow-root
 wp plugin install akismet --activate --allow-root
 wp plugin install wp-limit-login-attempts --activate --allow-root
 wp plugin install google-sitemap-generator --activate --allow-root
