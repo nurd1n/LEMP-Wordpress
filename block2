@@ -24,7 +24,6 @@ server {
     }
 
 
-
     if (!-e $request_filename) { 
         rewrite ^/(/.*)/sitemap\.xml$ /(/.*)/sitemap_index.xml permanent;
         rewrite ^/(/.*)/([a-z]+)?-?sitemap\.xsl$ /(/.*)/index.php?mwp_sitemap=xsl last;
