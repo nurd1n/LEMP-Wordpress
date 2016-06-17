@@ -4,14 +4,14 @@ echo -n "Apa nama domain anda (tanpa dot com) :u
 "
 read domain
 echo "$domain" > deletedomain; clear
-echo -n "Apa keyword blog anda (huruf kecil semua) :
-"
-read keyword
-echo "$keyword" > deletekeyword; clear
 echo -n "Apa nama ekstension domain anda (com, net, org, xyz, dll) :
 "
 read ekstension
 echo "$ekstension" > deleteekstension; clear
+echo -n "Apa keyword blog anda (huruf kecil semua) :
+"
+read keyword
+echo "$keyword" > deletekeyword; clear
 echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)" >> /home/database.txt
 echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
 "
