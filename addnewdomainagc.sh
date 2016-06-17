@@ -23,6 +23,7 @@ echo "user db wp : $(cat /deleteuserdb)" >> /home/database.txt
 echo "pass db wp : $(cat /deletepassdb)" >> /home/database.txt
 #spin
 names | sed 's| ||g' | tr A-Z a-z > /delete-author
+echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword) : $(cat /delete-author)" >> /home/usernames.txt
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-comment
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-colophon
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-content
