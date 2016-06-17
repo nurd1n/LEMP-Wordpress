@@ -97,12 +97,12 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block2 -o deletebloc
 # Get ip adress
 curl -s http://ipv4.icanhazip.com > deleteipadress
 echo "if [ \$(find /etc/nginx/sites-available/* | grep ramandikitchen.com | wc -l) -lt \"1\" ]; then echo \"cat deleteblock | sed -e 's/domain/\$(cat deletedomain)/g' -e 's/ekstension/\$(cat deleteekstension)/g' -e 's/ipadress/\$(cat deleteipadress)/g' > /etc/nginx/sites-available/\$(cat deletedomain).\$(cat deleteekstension)\" | bash - && echo \"sudo ln -s /etc/nginx/sites-available/\$(cat deletedomain).\$(cat deleteekstension) /etc/nginx/sites-enabled/\$(cat deletedomain).\$(cat deleteekstension)\" | bash - ;else clear ;fi" | bash -
-echo "mkdir -p /home/www/$(cat deletedomain)/$(cat deletekeyword)" | bash -
-echo "chmod 777 /home/www/$(cat deletedomain)/$(cat deletekeyword)" | bash -
-echo "sed -i '25 a     location /$(cat deletekeyword)/ { try_files \$uri \$uri/ /$(cat deletekeyword)/index.php?q=\$uri&\$args; }' /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
+echo "mkdir -p /home/www/$(cat deletedomain)/$(cat /deletekeyword)" | bash -
+echo "chmod 777 /home/www/$(cat deletedomain)/$(cat /deletekeyword)" | bash -
+echo "sed -i '25 a     location /$(cat /deletekeyword)/ { try_files \$uri \$uri/ /$(cat /deletekeyword)/index.php?q=\$uri&\$args; }' /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart; service varnish restart
 # Clone file
-eval $(echo "cd /home/www/$(cat /deletedomain)/$(cat deletekeyword)")
+eval $(echo "cd /home/www/$(cat /deletedomain)/$(cat /deletekeyword)")
 curl -L http://moviestreamfullhd.com/wpdatabase/agc.tar.gz -o uploads.tar.gz
 tar -zxvf uploads.tar.gz
 shred -v -n 25 -u -z uploads.tar.gz
@@ -110,10 +110,10 @@ shred -v -n 25 -u -z uploads.tar.gz
 echo "cat wp-config.php | sed -e 's|nurd1npntr|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' wp-config.php > /delete-wp-config.php" | bash -
 cat /delete-wp-config.php > wp-config.php
 # Create database, user and password
-echo "echo \"echo \\\"create database wp_$(cat deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension); create user $(cat /deleteuserdb)@localhost identified by '$(cat /deletepassdb)'; grant all privileges on wp_$(cat deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension).* to $(cat /deleteuserdb)@localhost identified by '$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p$(cat /deletepassmysql)\\\"\"" | bash - | bash -
+echo "echo \"echo \\\"create database wp_$(cat /deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension); create user $(cat /deleteuserdb)@localhost identified by '$(cat /deletepassdb)'; grant all privileges on wp_$(cat /deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension).* to $(cat /deleteuserdb)@localhost identified by '$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p$(cat /deletepassmysql)\\\"\"" | bash - | bash -
 # Download da, search & replace, import
 echo "curl -L http://moviestreamfullhd.com/wpdatabase/agc.sql | sed -e 's|satu|$(cat /deletekeyword)|g' -e 's|ramandikitchen_com|$(cat /deletedomain)_$(cat /deleteekstension)|g' -e 's|ramandikitchen\.com|$(cat /deletedomain)\.$(cat /deleteekstension)|g' -e 's|Ramandikitchen|$(cat /deletedomain | sed 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|Satu|$(cat /deletekeyword | sed 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|RAMANDIKITCHEN|$(cat /deletedomain | tr a-z A-Z)|g' -e 's|SATU 2016|$(cat /deletekeyword | tr a-z A-Z) $(date +'%Y')|g' -e 's|pandayank22\@gmail\.com|$(cat /delete-author)\@$(cat /deletedomain)\.$(cat /deleteekstension)|g' -e 's|antlia|$(cat /delete-antlia)|g' -e 's|inc/frontend\.php|$(cat /delete-inc)/$(cat /delete-frontend)\.php|g' -e 's|inc/breadcrumb\.php|$(cat /delete-inc)/$(cat /delete-breadcrumb)\.php|g' -e 's|Antlia|$(cat /delete-antlia | sed 's/.*/\L&/; s/[a-z]*/\u&/g')|g' -e 's|leeedwardjoon|$(cat /delete-author)|g' -e 's|51ef3880-5ccc-41a5-88b9-7dbe4989e813|$(cat /etc/varnish/secret)|g' -e 's|ABeeZee|$(printf 'Alegreya Sans SC\nAllerta\nAnaheim\nMontserrat\nOpen Sans\nOswald\nRoboto\nRoboto Condensed' | shuf -n 1)|g' -e 's|Acme|$(printf 'Alegreya Sans SC\nAllerta\nAnaheim\nMontserrat\nOpen Sans\nOswald\nRoboto\nRoboto Condensed' | shuf -n 1)|g' -e 's|#1a32a8|$(printf '#1a32a8\n#1931aa\n#1826a3\n#182aa0\n#182ba5\n#1528a5' | shuf -n 1)|g' -e 's|#59c13c|$(printf '#59c13c\n#56c138\n#52c134\n#4ec12e\n#43bf2d\n#60bf2d' | shuf -n 1)|g' -e 's|#1e73be|$(printf '#1e73be\n#1a72bf\n#1a6fba\n#2172ba\n#2277c1\n#1571c1' | shuf -n 1)|g' -e 's|#030375|$(printf '#030375\n#02067f\n#080c7f\n#0b0f7f\n#0a1787\n#091687' | shuf -n 1)|g' -e 's|#91ea48|$(printf '#91ea48\n#8be045\n#85e03a\n#7edd39\n#69d637\n#61d62a' | shuf -n 1)|g' -e 's|#1d37b7|$(printf '#1d37b7\n#1e38bc\n#1632bc\n#1622bf\n#1520bf\n#2412aa' | shuf -n 1)|g' -e 's|#196baa|$(printf '#196baa\n#1a6faf\n#166daf\n#116baf\n#116cb2\n#1275b7' | shuf -n 1)|g' -e 's|#51aa08|$(printf '#51aa08\n#50a808\n#51a80a\n#53a80d\n#3ea80d\n#41a812' | shuf -n 1)|g' -e 's|#1e73be|$(printf '#1e73be\n#1a72bf\n#136ebf\n#2476bf\n#257ac4\n#1d76c4' | shuf -n 1)|g' -e 's|#81d742|$(printf '#81d742\n#7cd63b\n#78d635\n#72d62a\n#54d32a\n#4fd323' | shuf -n 1)|g' > wp_$(cat /deletedomain).sql" | bash -
-echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension) < wp_$(cat /deletedomain).sql" | bash -
+echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension) < wp_$(cat /deletedomain).sql" | bash -
 echo "shred -v -n 25 -u -z wp_$(cat /deletedomain).sql" | bash -
 # Spin theme 
 eval $(echo "cd /home/www/$(cat /deletedomain)/$(cat /deletekeyword)/wp-content/themes")
