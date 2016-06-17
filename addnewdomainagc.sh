@@ -12,7 +12,7 @@ echo -n "Apa keyword blog anda (huruf kecil semua) :
 "
 read keyword
 echo "$keyword" > deletekeyword; clear
-echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)" >> /home/database.txt
+echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword)" >> /home/database.txt
 echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
 "
 read passmysql
@@ -107,7 +107,7 @@ curl -L http://moviestreamfullhd.com/wpdatabase/agc.tar.gz -o uploads.tar.gz
 tar -zxvf uploads.tar.gz
 shred -v -n 25 -u -z uploads.tar.gz
 # Change wp-config
-echo "cat wp-config.php | sed -e 's|nurd1npntr|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' wp-config.php > /delete-wp-config.php" | bash -
+echo "cat wp-config.php | sed -e 's|nurd1npntr|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' -e 's|satu_ramandikitchen_com|$(cat /deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension)|g' > /delete-wp-config.php" | bash -
 cat /delete-wp-config.php > wp-config.php
 # Create database, user and password
 echo "echo \"echo \\\"create database wp_$(cat /deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension); create user $(cat /deleteuserdb)@localhost identified by '$(cat /deletepassdb)'; grant all privileges on wp_$(cat /deletekeyword)_$(cat /deletedomain)_$(cat /deleteekstension).* to $(cat /deleteuserdb)@localhost identified by '$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p$(cat /deletepassmysql)\\\"\"" | bash - | bash -
