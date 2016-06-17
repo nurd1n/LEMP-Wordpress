@@ -1,6 +1,6 @@
 cd /
 clear && clear
-echo -n "Apa nama domain anda (tanpa dot com) :u
+echo -n "Apa nama domain anda (tanpa dot com) :
 "
 read domain
 echo "$domain" > deletedomain; clear
@@ -164,6 +164,7 @@ chmod 777 */*/*
 chmod 777 */*/*/*
 # Install plugin
 eval $(echo "cd /home/www/$(cat /deletedomain)/$(cat /deletekeyword)")
+echo "wp theme activate $(cat /delete-antlia) --allow-root" | bash -
 echo "wp plugin activate $(cat /delete-antlia) --allow-root" | bash -
 # Finishing
 chown -R www-data:www-data *
