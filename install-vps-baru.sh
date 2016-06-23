@@ -57,7 +57,7 @@ echo "$(cat deletemime.types)" > /etc/nginx/mime.types
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/php.ini -o deletephp.ini
 echo "$(cat deletephp.ini)" >> /etc/php5/fpm/php.ini
 sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
-sed -i 's/allow_url_fopen = Off/allow_url_fopen = On' /etc/php5/fpm/php.ini
+sed -i 's/allow_url_fopen = Off/allow_url_fopen = On/g' /etc/php5/fpm/php.ini
 sed -i 's/allow_url_include = Off/allow_url_include = On/g' /etc/php5/fpm/php.ini
 sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php5/fpm/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php5/fpm/php.ini
