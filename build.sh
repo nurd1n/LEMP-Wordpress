@@ -96,7 +96,7 @@ tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-
 echo "$(cat /delete-gallery)" >> /home/gallery-video.txt
 echo "$(cat /delete-video)" >> /home/gallery-video.txt
 # Download block
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block2 -o deleteblock
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/block2 -o deleteblock
 # Get ip adress
 curl -s http://ipv4.icanhazip.com > deleteipadress
 echo "if [ \$(find /etc/nginx/sites-available/* | grep $(cat /deletedomain).$(cat /deleteekstension) | wc -l) -lt \"1\" ]; then echo \"cat deleteblock | sed -e 's/domain/\$(cat deletedomain)/g' -e 's/ekstension/\$(cat deleteekstension)/g' -e 's/ipadress/\$(cat deleteipadress)/g' > /etc/nginx/sites-available/\$(cat deletedomain).\$(cat deleteekstension)\" | bash - && echo \"sudo ln -s /etc/nginx/sites-available/\$(cat deletedomain).\$(cat deleteekstension) /etc/nginx/sites-enabled/\$(cat deletedomain).\$(cat deleteekstension)\" | bash - ;else clear ;fi" | bash -
