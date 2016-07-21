@@ -100,12 +100,12 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block2 -o deletebloc
 # Get ip adress
 curl -s http://ipv4.icanhazip.com > deleteipadress
 echo "if [ \$(find /etc/nginx/sites-available/* | grep $(cat /deletedomain).$(cat /deleteekstension) | wc -l) -lt \"1\" ]; then echo \"cat deleteblock | sed -e 's/domain/\$(cat deletedomain)/g' -e 's/ekstension/\$(cat deleteekstension)/g' -e 's/ipadress/\$(cat deleteipadress)/g' > /etc/nginx/sites-available/\$(cat deletedomain).\$(cat deleteekstension)\" | bash - && echo \"sudo ln -s /etc/nginx/sites-available/\$(cat deletedomain).\$(cat deleteekstension) /etc/nginx/sites-enabled/\$(cat deletedomain).\$(cat deleteekstension)\" | bash - ;else clear ;fi" | bash -
-echo "mkdir -p /home/www/$(cat deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')" | bash -
-echo "chmod 777 /home/www/$(cat deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')" | bash -
+echo "mkdir -p /home/www/$(cat deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')" | bash -
+echo "chmod 777 /home/www/$(cat deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')" | bash -
 echo "sed -i '25 a     location /$(cat /deletekeyword | sed 's/ /-/g')/ { try_files \$uri \$uri/ /$(cat /deletekeyword | sed 's/ /-/g')/index.php?q=\$uri&\$args; }' /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart; service varnish restart
 # Clone file
-eval $(echo "cd /home/www/$(cat /deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')")
+eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)$(cat /deletekeyword | sed 's/ /-/g')")
 curl -L http://moviestreamfullhd.com/wpdatabase/magicwp.tar.gz -o uploads.tar.gz
 tar -zxvf uploads.tar.gz
 shred -v -n 25 -u -z uploads.tar.gz
@@ -119,7 +119,7 @@ echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/magicwp.sql |
 echo "mysql -u $(cat /deleteuserdb) \"-p$(cat /deletepassdb)\" wp_$(cat /deletekeyword | sed 's/ /_/g')_$(cat /deletedomain)_$(cat /deleteekstension) < wp_$(cat /deletedomain).sql" | bash -
 echo "shred -v -n 25 -u -z wp_$(cat /deletedomain).sql" | bash -
 # Spin theme 
-eval $(echo "cd /home/www/$(cat /deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content/themes")
+eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content/themes")
 echo "mv antlia-wp $(cat /delete-antlia)" | bash -
 eval $(echo "cd $(cat /delete-antlia)")
 echo "sed -i -e 's|AARONMACIAS ASUS 2016|$(cat /deletedomain | tr a-z A-Z) $(cat /deletekeyword | tr a-z A-Z) $(date +'%Y')|g' -e \"s|id=\\\"comment|id=\\\"$(cat /delete-comment)|g\" -e \"s|id=\\\"colophon|id=\\\"$(cat /delete-colophon)|g\" -e \"s|id=\\\"content|id=\\\"$(cat /delete-content)|g\" -e \"s|id=\\\"contact|id=\\\"$(cat /delete-contact)|g\" -e \"s|id=\\\"checking|id=\\\"$(cat /delete-checking)|g\" -e \"s|id=\\\"footer|id=\\\"$(cat /delete-footer)|g\" -e \"s|id=\\\"input|id=\\\"$(cat /delete-input)|g\" -e \"s|id=\\\"masthead|id=\\\"$(cat /delete-masthead)|g\" -e \"s|id=\\\"page|id=\\\"$(cat /delete-page)|g\" -e \"s|id=\\\"post|id=\\\"$(cat /delete-post)|g\" -e \"s|id=\\\"primary|id=\\\"$(cat /delete-primary)|g\" -e \"s|id=\\\"site|id=\\\"$(cat /delete-site)|g\" -e \"s|id=\\\"slider|id=\\\"$(cat /delete-slider)|g\" -e \"s|id=\\\"send|id=\\\"$(cat /delete-send)|g\" -e \"s|id=\\\"secondary|id=\\\"$(cat /delete-secondary)|g\" -e \"s|id=\\\"submitted|id=\\\"$(cat /delete-submitted)|g\" -e \"s|id=\\\"update|id=\\\"$(cat /delete-update)|g\" -e \"s|class=\\\"attachment|class=\\\"$(cat /delete-attachment)|g\" -e \"s|class=\\\"breadcrumb|class=\\\"$(cat /delete-breadcrumb)|g\" -e \"s|class=\\\"button|class=\\\"$(cat /delete-button)|g\" -e \"s|class=\\\"comment|class=\\\"$(cat /delete-comment)|g\" -e \"s|class=\\\"customize|class=\\\"$(cat /delete-customize)|g\" -e \"s|class=\\\"current|class=\\\"$(cat /delete-current)|g\" -e \"s|class=\\\"contact|class=\\\"$(cat /delete-contact)|g\" -e \"s|class=\\\"checkbox|class=\\\"$(cat /delete-checkbox)|g\" -e \"s|class=\\\"content|class=\\\"$(cat /delete-content)|g\" -e \"s|class=\\\"description|class=\\\"$(cat /delete-description)|g\" -e \"s|class=\\\"entry|class=\\\"$(cat /delete-entry)|g\" -e \"s|class=\\\"edit|class=\\\"$(cat /delete-edit)|g\" -e \"s|class=\\\"form|class=\\\"$(cat /delete-form)|g\" -e \"s|class=\\\"filed|class=\\\"$(cat /delete-filed)|g\" -e \"s|class=\\\"hfeed|class=\\\"$(cat /delete-hfeed)|g\" -e \"s|class=\\\"header|class=\\\"$(cat /delete-header)|g\" -e \"s|class=\\\"image|class=\\\"$(cat /delete-image)|g\" -e \"s|class=\\\"inline|class=\\\"$(cat /delete-inline)|g\" -e \"s|class=\\\"label|class=\\\"$(cat /delete-label)|g\" -e \"s|class=\\\"more|class=\\\"$(cat /delete-more)|g\" -e \"s|class=\\\"meta|class=\\\"$(cat /delete-meta)|g\" -e \"s|class=\\\"nav-|class=\\\"$(cat /delete-nav)-|g\" -e \"s|class=\\\"no|class=\\\"$(cat /delete-no)|g\" -e \"s|class=\\\"post|class=\\\"$(cat /delete-post)|g\" -e \"s|class=\\\"related|class=\\\"$(cat /delete-related)|g\" -e \"s|class=\\\"reguler|class=\\\"$(cat /delete-reguler)|g\" -e \"s|class=\\\"share|class=\\\"$(cat /delete-share)|g\" -e \"s|class=\\\"time|class=\\\"$(cat /delete-time)|g\" -e \"s|class=\\\"txt|class=\\\"$(cat /delete-txt)|g\" -e \"s|class=\\\"textarea|class=\\\"$(cat /delete-textarea)|g\" -e \"s|class=\\\"taxonomy|class=\\\"$(cat /delete-taxonomy)|g\" -e \"s|class=\\\"tiny|class=\\\"$(cat /delete-tiny)|g\" -e \"s|class=\\\"thickbox|class=\\\"$(cat /delete-thickbox)|g\" -e \"s|class=\\\"updated|class=\\\"$(cat /delete-updated)|g\" -e \"s|class=\\\"wpbei|class=\\\"$(cat /delete-wpbei)|g\" -e \"s|class=\\\"widefat|class=\\\"$(cat /delete-widefat)|g\" -e \"s|class=\\\"wrap|class=\\\"$(cat /delete-wrap)|g\" -e \"s|class=\\\"widget|class=\\\"$(cat /delete-widget)|g\" -e \"s|-widget|-$(cat /delete-widget)|g\" -e \"s|widget-area|$(cat /delete-widget)-area|g\" -e \"s| widget | $(cat /delete-widget) |g\" -e \"s|\\.widget|\\.$(cat /delete-widget)|g\" -e \"s|widget_p|$(cat /delete-widget)_p|g\" -e \"s|-footer|-$(cat /delete-footer)|g\" -e \"s|class=\\\"footer|class=\\\"$(cat /delete-footer)|g\" -e \"s|\\.footer|\\.$(cat /delete-footer)|g\" -e \"s|-navigation|-$(cat /delete-navigation)|g\" -e \"s|class=\\\"slider|class=\\\"$(cat /delete-slider)|g\" -e \"s|slider-fold|$(cat /delete-slider)-fold|g\" -e \"s|clearfix|$(cat /delete-clearfix)|g\" -e \"s|site-|$(cat /delete-site)-|g\" -e \"s|site\\\"|$(cat /delete-site)\\\"|g\" -e \"s|788|1030|g\" -e \"s|728|970|g\" -e \"s|393|523|g\" -e \"s|add_image_size( 'medium-thumbnail', 222, 137, true );||g\" *.php" | bash -
@@ -154,7 +154,7 @@ chmod 777 */*
 chmod 777 */*/*
 chmod 777 */*/*/*
 # Spin plugin
-eval $(echo "cd /home/www/$(cat /deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content/plugins")
+eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content/plugins")
 echo "mv antlia/templates/papercut/antlia.html antlia/templates/papercut/$(cat /delete-antlia).html" | bash -
 echo "mv antlia/templates/stupidpie/antlia.html antlia/templates/stupidpie/$(cat /delete-antlia).html" | bash -
 echo "sed -i -e \"s|id=\\\"post|id=\\\"$(cat /delete-post)|g\" -e \"s|gallery|$(cat /delete-gallery)|g\" -e \"s|entry|$(cat /delete-entry)|g\" antlia/templates/*/*.html" | bash -
@@ -165,7 +165,7 @@ chmod 777 */*
 chmod 777 */*/*
 chmod 777 */*/*/*
 # Install plugin
-eval $(echo "cd /home/www/$(cat /deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')")
+eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')")
 # Update plugin
 wp plugin update advanced-ads --allow-root
 wp plugin update cookie-law-info --allow-root
@@ -180,7 +180,7 @@ wp plugin update wordpress-ping-optimizer --allow-root
 wp plugin update wp-varnish-master --allow-root
 # Finishing
 chown -R www-data:www-data *
-echo "chmod 777 /home/www/$(cat /deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content" | bash -
+echo "chmod 777 /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content" | bash -
 # Template
 echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/template1.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' -e 's/keyword1/$(cat /deletekeyword | sed 's/ /-/g')/g' -e 's/gallery/$(cat /delete-gallery)/g' -e 's/video-container/$(cat /delete-video)-container/g' >  /home/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html" | bash -
 echo "cp /home/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html /var/www/html/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html" | bash -
