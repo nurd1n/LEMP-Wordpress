@@ -1,6 +1,6 @@
 #!/bin/bash
 while read f1; do
-    echo "sed -n '$f1' < data/domainawal > /deletedomain" | bash -
+    echo "sed -n '$f1' < data/domain > /deletedomain" | bash -
     echo "sed -n '$f1' < data/ekstension > /deleteekstension" | bash -
     echo "sed -n '$f1' < data/keyword > /deletekeyword" | bash -    
     echo "sed -n '$f1' < data/niches > /deleteniches" | bash -    
