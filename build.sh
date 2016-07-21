@@ -1,11 +1,6 @@
 cd /
-echo "$(cat /home/new/data/domain)" > deletedomain; clear
-echo "$(cat /home/new/data/ekstension)" > deleteekstension; clear
-echo "$(cat /home/new/data/keyword)" > deletekeyword; clear
-echo "$(cat /home/new/data/niches)" > deleteniches; clear
 echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')" >> /home/database.txt
 echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')" >> /home/gallery-video.txt
-echo "$(cat /home/new/data/passmysql)" > deletepassmysql; clear
 tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deleteuserdb; clear
 tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deletepassdb; clear
 echo "user db wp : $(cat /deleteuserdb)" >> /home/database.txt
@@ -188,3 +183,11 @@ chown -R www-data:www-data *
 echo "chmod 777 /home/www/$(cat /deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content" | bash -
 # Template
 echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/template1.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' -e 's/keyword1/$(cat /deletekeyword | sed 's/ /-/g')/g' -e 's/gallery/$(cat /delete-gallery)/g' -e 's/video-container/$(cat /delete-video)-container/g' >  /home/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html" | bash -
+echo "cp /home/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html /var/www/html/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html" | bash -
+# Untuk data clone
+mkdir -p /home/clone2
+cat /deletedomain >> /home/clone2/domainawal
+cat /deleteekstension >> /home/clone2/ekstensionawal
+cat /deletekeyword >> /home/clone2/keywordawal
+cat /deleteuserdb >> /home/clone2/userdbawal
+cat /deletepassdb >> /home/clone2/passdbawal
