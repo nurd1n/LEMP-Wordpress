@@ -105,7 +105,8 @@ echo "chmod 777 /home/www/$(cat deletedomain)$(cat /deleteekstension)/$(cat /del
 echo "sed -i '25 a     location /$(cat /deletekeyword | sed 's/ /-/g')/ { try_files \$uri \$uri/ /$(cat /deletekeyword | sed 's/ /-/g')/index.php?q=\$uri&\$args; }' /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
 sudo /etc/init.d/nginx restart
 sudo /etc/init.d/php5-fpm restart
-service mysql restart; service varnish restart
+sudo /etc/init.d/mysql restart
+sudo /etc/init.d/varnish restart
 # Clone file
 eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')")
 curl -L http://moviestreamfullhd.com/wpdatabase/magicwp.tar.gz -o uploads.tar.gz
