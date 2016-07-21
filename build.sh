@@ -103,7 +103,9 @@ echo "if [ \$(find /etc/nginx/sites-available/* | grep $(cat /deletedomain).$(ca
 echo "mkdir -p /home/www/$(cat deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')" | bash -
 echo "chmod 777 /home/www/$(cat deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')" | bash -
 echo "sed -i '25 a     location /$(cat /deletekeyword | sed 's/ /-/g')/ { try_files \$uri \$uri/ /$(cat /deletekeyword | sed 's/ /-/g')/index.php?q=\$uri&\$args; }' /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
-sudo service nginx restart; sudo service php5-fpm restart; service mysql restart; service varnish restart
+sudo /etc/init.d/nginx restart
+sudo /etc/init.d/php5-fpm restart
+service mysql restart; service varnish restart
 # Clone file
 eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)$(cat /deletekeyword | sed 's/ /-/g')")
 curl -L http://moviestreamfullhd.com/wpdatabase/magicwp.tar.gz -o uploads.tar.gz
@@ -191,3 +193,4 @@ cat /deleteekstension >> /home/clone2/ekstensionawal
 cat /deletekeyword >> /home/clone2/keywordawal
 cat /deleteuserdb >> /home/clone2/userdbawal
 cat /deletepassdb >> /home/clone2/passdbawal
+echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')/" >> /home/new/report.txt
