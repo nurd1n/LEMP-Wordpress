@@ -107,7 +107,7 @@ sudo /etc/init.d/nginx restart
 sudo /etc/init.d/php5-fpm restart
 service mysql restart; service varnish restart
 # Clone file
-eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)$(cat /deletekeyword | sed 's/ /-/g')")
+eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')")
 curl -L http://moviestreamfullhd.com/wpdatabase/magicwp.tar.gz -o uploads.tar.gz
 tar -zxvf uploads.tar.gz
 shred -v -n 25 -u -z uploads.tar.gz
