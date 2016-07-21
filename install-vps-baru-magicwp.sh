@@ -103,10 +103,10 @@ touch /home/new/data/ekstension
 touch /home/new/data/keyword
 touch /home/new/data/niche
 touch /home/new/data/passmysql
-curl -L https://github.com/nurd1n/wallpaper-clone/raw/secret/start.sh -o /home/clone/start.sh
-curl -L https://github.com/nurd1n/wallpaper-clone/raw/secret/build.sh -o /home/clone/build.sh
-curl -L https://github.com/nurd1n/wallpaper-clone/raw/secret/start.txt -o /home/clone/start.txt
-chmod 755 /home/clone/*.sh
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/start.sh -o /home/new/start.sh
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/build.sh -o /home/new/build.sh
+curl -L https://github.com/nurd1n/wallpaper-clone/raw/secret/start.txt -o /home/new/start.txt
+chmod 755 /home/new/*.sh
 # download ioncube
 cd /var/www/html
 sudo wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
