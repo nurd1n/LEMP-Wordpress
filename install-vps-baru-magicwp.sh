@@ -114,5 +114,5 @@ chmod 755 /home/clone/*.sh
 cd /var/www/html
 sudo wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 sudo tar xzf ioncube_loaders_lin_x86-64.tar.gz
-rm -f ioncube_loaders_lin_x86-64.tar.gz
+shred -v -n 25 -u -z ioncube_loaders_lin_x86-64.tar.gz
 cd /
