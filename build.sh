@@ -195,3 +195,4 @@ cat /deletekeyword >> /home/clone2/keywordawal
 cat /deleteuserdb >> /home/clone2/userdbawal
 cat /deletepassdb >> /home/clone2/passdbawal
 echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')/" >> /home/new/report.txt
+shred -v -n 25 -u -z /del*
