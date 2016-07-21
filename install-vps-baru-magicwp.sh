@@ -101,7 +101,7 @@ mkdir -p /home/new/data
 touch /home/new/data/domain
 touch /home/new/data/ekstension
 touch /home/new/data/keyword
-touch /home/new/data/niche
+touch /home/new/data/niches
 touch /home/new/data/passmysql
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/start.sh -o /home/new/start.sh
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/build.sh -o /home/new/build.sh
