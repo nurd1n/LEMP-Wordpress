@@ -95,17 +95,14 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 wp --info --allow-root
-mkdir -p /home/clone/data
-touch /home/clone/data/ipawal
-touch /home/clone/data/domainawal
-touch /home/clone/data/ekstensionawal
-touch /home/clone/data/userdbawal
-touch /home/clone/data/passdbawal
-touch /home/clone/data/inisialawal
-touch /home/clone/data/domainbaru
-touch /home/clone/data/ekstensionbaru
-touch /home/clone/data/passmysql
-touch /home/clone/data/inisialbaru
+mkdir -p /var/www/html/template
+mkdir -p /home/template
+mkdir -p /home/new/data
+touch /home/new/data/domain
+touch /home/new/data/ekstension
+touch /home/new/data/keyword
+touch /home/new/data/niche
+touch /home/new/data/passmysql
 curl -L https://github.com/nurd1n/wallpaper-clone/raw/secret/start.sh -o /home/clone/start.sh
 curl -L https://github.com/nurd1n/wallpaper-clone/raw/secret/build.sh -o /home/clone/build.sh
 curl -L https://github.com/nurd1n/wallpaper-clone/raw/secret/start.txt -o /home/clone/start.txt
