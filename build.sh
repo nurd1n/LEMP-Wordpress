@@ -1,27 +1,11 @@
 cd /
-clear && clear
-echo -n "Apa nama domain anda (tanpa dot com) :
-"
-read domain
-echo "$domain" > deletedomain; clear
-echo -n "Apa nama ekstension domain anda (com, net, org, xyz, dll) :
-"
-read ekstension
-echo "$ekstension" > deleteekstension; clear
-echo -n "Apa keyword blog anda (huruf kecil semua dgn spasi) :
-"
-read keyword
-echo "$keyword" > deletekeyword; clear
-echo -n "Apa niche blog anda (huruf kecil semua) :
-"
-read niches
-echo "$niches" > deleteniches; clear
+echo "$(cat /home/new/data/domain)" > deletedomain; clear
+echo "$(cat /home/new/data/ekstension)" > deleteekstension; clear
+echo "$(cat /home/new/data/keyword)" > deletekeyword; clear
+echo "$(cat /home/new/data/niches)" > deleteniches; clear
 echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')" >> /home/database.txt
 echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')" >> /home/gallery-video.txt
-echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
-"
-read passmysql
-echo "$passmysql" > deletepassmysql; clear
+echo "$(cat /home/new/data/passmysql)" > deletepassmysql; clear
 tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deleteuserdb; clear
 tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1 > deletepassdb; clear
 echo "user db wp : $(cat /deleteuserdb)" >> /home/database.txt
@@ -202,3 +186,5 @@ wp plugin update wp-varnish-master --allow-root
 # Finishing
 chown -R www-data:www-data *
 echo "chmod 777 /home/www/$(cat /deletedomain)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content" | bash -
+# Template
+echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/template1.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' -e 's/keyword1/$(cat /deletekeyword | sed 's/ /-/g')/g' -e 's/gallery/$(cat /delete-gallery)/g' -e 's/video-container/$(cat /delete-video)-container/g' >  /home/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html" | bash -
