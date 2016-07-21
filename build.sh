@@ -116,22 +116,6 @@ tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-video
 echo "$(cat /delete-gallery)" >> /home/gallery-video.txt
 echo "$(cat /delete-video)" >> /home/gallery-video.txt
-# random user
-names | sed 's| ||g' | tr A-Z a-z > /deletemilley
-names | sed 's| ||g' | tr A-Z a-z > /deletemartha
-names | sed 's| ||g' | tr A-Z a-z > /deleteedward
-names | sed 's| ||g' | tr A-Z a-z > /deletesamuel
-names | sed 's| ||g' | tr A-Z a-z > /deletedaniel
-names | sed 's| ||g' | tr A-Z a-z > /deletecason
-names | sed 's| ||g' | tr A-Z a-z > /deletevandiver
-names | sed 's| ||g' | tr A-Z a-z > /deleteteresa
-names | sed 's| ||g' | tr A-Z a-z > /deletecollins
-names | sed 's| ||g' | tr A-Z a-z > /deletecarole
-names | sed 's| ||g' | tr A-Z a-z > /deletetomlin
-names | sed 's| ||g' | tr A-Z a-z > /deletesharoon
-names | sed 's| ||g' | tr A-Z a-z > /deleteissac
-names | sed 's| ||g' | tr A-Z a-z > /deletesamantha
-names | sed 's| ||g' | tr A-Z a-z > /deleteturner
 # Download block
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block2 -o deleteblock
 # Get ip adress
