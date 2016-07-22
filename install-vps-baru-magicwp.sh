@@ -87,7 +87,10 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/varnish -o deletevar
 echo "$(cat deletevarnish)" > /etc/default/varnish
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/default.vcl -o deletedefault.vcl
 echo "$(cat deletedefault.vcl)" > /etc/varnish/default.vcl
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
+# edit default host
+sed -i 's|index\.html|index\.php index\.html|g' /etc/nginx/sites-enabled/default
+echo "sed -i '49 a     location /phpmyadmin { alias   /var/www/html/phpmyadmin/; index  index.php index.html index.htm;}' /etc/nginx/sites-enabled/default" | bash -
+echo "sed -i '50 a     location ~ \.php$ {include snippets/fastcgi-php.conf; fastcgi_pass unix:/var/run/php5-fpm.sock;}' /etc/nginx/sites-enabled/default" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart; service varnish restart
 # install wp-cli
 cd /tmp
@@ -112,4 +115,11 @@ cd /var/www/html
 sudo wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 sudo tar xzf ioncube_loaders_lin_x86-64.tar.gz
 shred -v -n 25 -u -z ioncube_loaders_lin_x86-64.tar.gz
+# download phpmyadmin
+mkdir -p phpmyadmin
+sudo wget https://files.phpmyadmin.net/phpMyAdmin/4.6.3/phpMyAdmin-4.6.3-all-languages.tar.gz
+tar -zxvf phpMyAdmin-4.6.3-all-languages.tar.gz
+sudo mv phpMyAdmin-4.6.3*/* .
+sudo rm phpMyAdmin-4.6.3-all-languages.tar.gz
+sudo chown -R www-data:www-data /var/www/html/phpmyadmin
 cd /
