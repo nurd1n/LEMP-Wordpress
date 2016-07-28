@@ -4,10 +4,34 @@ echo -n "Apa password mysql yg anda inginkan (huruf dan angka) :
 "
 read passmysql
 echo "$passmysql" > deletepassmysql; clear
-#install x2go
+apt-get update
 sudo apt-get install apt-transport-https
-apt-get update && apt-get -y install aptitude
+apt-get -y install aptitude
 apt-get install gawk python-setuptools software-properties-common
+#install pip
+cd /tmp
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+pip install -U pip
+#install git
+apt-get install git-all
+#install protobuf 3
+apt-get install python-protobuf
+#install virtualenv
+apt-get update
+pip install virtualenv
+#install pokemon go bot
+cd /home
+git clone -b dev https://github.com/PokemonGoF/PokemonGo-Bot  
+cd PokemonGo-Bot
+virtualenv .
+source bin/activate
+pip install -r requirements.txt
+git submodule init
+git submodule update
+git pull
+#install x2go
+cd /
 echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
 echo "deb-src http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
 curl https://repo.varnish-cache.org/ubuntu/GPG-key.txt | apt-key add - 
@@ -98,18 +122,6 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 wp --info --allow-root
-mkdir -p /var/www/html/template
-mkdir -p /home/template
-mkdir -p /home/new/data
-touch /home/new/data/domain
-touch /home/new/data/ekstension
-touch /home/new/data/keyword
-touch /home/new/data/niches
-touch /home/new/data/passmysql
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/start.sh -o /home/new/start.sh
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/build.sh -o /home/new/build.sh
-curl -L https://github.com/nurd1n/wallpaper-clone/raw/secret/start.txt -o /home/new/start.txt
-chmod 755 /home/new/*.sh
 # download & install ioncube
 cd /var/www/html
 sudo wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
