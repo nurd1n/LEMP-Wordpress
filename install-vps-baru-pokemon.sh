@@ -27,9 +27,13 @@ cd PokemonGo-Bot
 virtualenv .
 source bin/activate
 pip install -r requirements.txt
+pip install -r requirements.txt --upgrade
 git submodule init
 git submodule update
 git pull
+./install.sh
+cp /home/PokemonGo-Bot/configs/config.json.example /home/PokemonGo-Bot/configs/config.json
+cp /home/PokemonGo-Bot/configs/config.json.pokemons.example /home/PokemonGo-Bot/configs/config.json.pokemons
 #install x2go
 cd /
 echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
@@ -67,7 +71,7 @@ sudo apt-get install mariadb-server mariadb-client
 service mysql restart
 mysql_secure_installation
 #install yg diperlukan
-sudo apt-get install at sendmail ffmpeg midori bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip varnish
+sudo apt-get install at sendmail midori bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip varnish
 #install mechanize & beautifulsoup
 easy_install mechanize
 easy_install BeautifulSoup4
