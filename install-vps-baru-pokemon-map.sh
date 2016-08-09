@@ -11,10 +11,11 @@ python get-pip.py
 pip install -U pip
 #install git
 apt-get install git-all
-apt-get nodejs npm
+apt-get install nodejs npm
+npm install && npm run build
 #install pokemon go map
 cd /home
-git clone -b master https://github.com/AHAAAAAAA/PokemonGo-Map
+git clone https://github.com/PokemonGoMap/PokemonGo-Map.git
 cd PokemonGo-Map
 pip install -r requirements.txt
 pip install -r requirements.txt --upgrade
