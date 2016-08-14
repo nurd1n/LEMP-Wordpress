@@ -7,7 +7,7 @@ echo "$passmysql" > deletepassmysql; clear
 apt-get update
 sudo apt-get install apt-transport-https
 apt-get -y install aptitude
-apt-get install gawk python-setuptools software-properties-common
+apt-get install gawk python-setuptools software-properties-common python-dev
 #install pip
 cd /tmp
 wget https://bootstrap.pypa.io/get-pip.py
