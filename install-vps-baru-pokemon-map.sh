@@ -19,7 +19,9 @@ git clone https://github.com/PokemonGoMap/PokemonGo-Map.git
 cd PokemonGo-Map
 pip install -r requirements.txt
 pip install -r requirements.txt --upgrade
-pip install --upgrade six
+pip install six --upgrade
+pip install git+https://github.com/ChrisTM/Flask-CacheBust.git@master#egg=flask_cachebust
+
 git submodule init
 git submodule update
 git pull
