@@ -13,7 +13,6 @@ pip install -U pip
 #install git
 apt-get install git-all
 apt-get install nodejs npm
-npm install && npm run build
 #install pokemon go map
 cd /home
 git clone https://github.com/PokemonGoMap/PokemonGo-Map.git
@@ -25,6 +24,7 @@ pip install git+https://github.com/ChrisTM/Flask-CacheBust.git@master#egg=flask_
 git submodule init
 git submodule update
 git pull
+npm install && npm run build
 #install x2go
 cd /
 echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
