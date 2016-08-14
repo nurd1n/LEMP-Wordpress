@@ -13,6 +13,8 @@ pip install -U pip
 #install git
 apt-get install git-all
 apt-get install nodejs npm
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
 #install pokemon go map
 cd /home
 git clone https://github.com/PokemonGoMap/PokemonGo-Map.git
