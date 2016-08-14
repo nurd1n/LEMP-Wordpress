@@ -1,10 +1,8 @@
 cd /
 clear && clear
 apt-get update
-sudo apt-get install apt-transport-https
+sudo apt-get install apt-transport-https gawk python-setuptools software-properties-common python-dev
 apt-get -y install aptitude
-apt-get install gawk python-setuptools software-properties-common
-sudo apt-get install python-dev
 #install pip
 cd /tmp
 wget https://bootstrap.pypa.io/get-pip.py
@@ -12,7 +10,7 @@ python get-pip.py
 pip install -U pip
 #install git
 apt-get install git-all
-apt-get install nodejs npm
+#install nodejs & npm
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
 #install pokemon go map
@@ -22,11 +20,11 @@ cd PokemonGo-Map
 pip install -r requirements.txt
 pip install -r requirements.txt --upgrade
 pip install six --upgrade
-pip install git+https://github.com/ChrisTM/Flask-CacheBust.git@master#egg=flask_cachebust
 git submodule init
 git submodule update
 git pull
-npm install && npm run build
+npm install
+npm run build
 #install x2go
 cd /
 echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
@@ -111,6 +109,7 @@ echo "sed -i '49 a     location /phpmyadmin { alias   /var/www/html/phpmyadmin/;
 echo "sed -i '50 a     location ~ \.php$ {include snippets/fastcgi-php.conf; fastcgi_pass unix:/var/run/php5-fpm.sock;}' /etc/nginx/sites-enabled/default" | bash -
 sudo service nginx restart; sudo service php5-fpm restart; service mysql restart; service varnish restart
 # download phpmyadmin
+cd /var/www/html
 mkdir -p phpmyadmin
 cd phpmyadmin
 sudo wget https://files.phpmyadmin.net/phpMyAdmin/4.6.3/phpMyAdmin-4.6.3-all-languages.tar.gz
