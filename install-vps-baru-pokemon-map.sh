@@ -4,6 +4,7 @@ apt-get update
 sudo apt-get install apt-transport-https
 apt-get -y install aptitude
 apt-get install gawk python-setuptools software-properties-common
+sudo apt-get install python-dev
 #install pip
 cd /tmp
 wget https://bootstrap.pypa.io/get-pip.py
@@ -21,7 +22,6 @@ pip install -r requirements.txt
 pip install -r requirements.txt --upgrade
 pip install six --upgrade
 pip install git+https://github.com/ChrisTM/Flask-CacheBust.git@master#egg=flask_cachebust
-
 git submodule init
 git submodule update
 git pull
