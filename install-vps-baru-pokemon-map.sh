@@ -83,6 +83,7 @@ tar -zxvf phpMyAdmin-4.6.3-all-languages.tar.gz
 sudo mv phpMyAdmin-4.6.3*/* .
 sudo rm phpMyAdmin-4.6.3-all-languages.tar.gz
 sudo chown -R www-data:www-data /var/www/html/phpmyadmin
+sudo /etc/init.d/apache2 restart
 cd /
 sudo service nginx restart; sudo service php5-fpm restart
 clear
