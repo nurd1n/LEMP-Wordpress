@@ -181,6 +181,10 @@ wp plugin update seo-booster-pro --allow-root
 wp plugin update udinra-all-image-sitemap --allow-root
 wp plugin update wordpress-ping-optimizer --allow-root
 wp plugin update wp-varnish-master --allow-root
+# Update wordpress
+wp core update --version=4.6 --force --allow-root
+# Update wordpress database
+wp core update-db --allow-root
 # Finishing
 chown -R www-data:www-data *
 echo "chmod 777 /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g')/wp-content" | bash -
