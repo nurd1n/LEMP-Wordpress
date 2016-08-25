@@ -112,6 +112,9 @@ eval $(echo "cd /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /de
 curl -L http://moviestreamfullhd.com/wpdatabase/magicwp.tar.gz -o uploads.tar.gz
 tar -zxvf uploads.tar.gz
 shred -v -n 25 -u -z uploads.tar.gz
+# Download sql.sh
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/sql.sh -o sql.sh
+chmod 755 *.sh
 # Change wp-config
 echo "cat wp-config.php | sed -e 's|nanuranto|$(cat /deleteuserdb)|g' -e 's|pandayank22|$(cat /deletepassdb)|g' -e 's|asus_aaronmacias_xyz|$(cat /deletekeyword | sed 's/ /_/g')_$(cat /deletedomain)_$(cat /deleteekstension)|g' > /delete-wp-config.php" | bash -
 cat /delete-wp-config.php > wp-config.php
