@@ -14,7 +14,13 @@ rm -f wp-content/uploads/*-768x*.jpg
 rm -f wp-content/uploads/*-768x*.png
 rm -f wp-content/uploads/*-768x*.gif
 rm -f wp-content/uploads/*-768x*.jpeg
+rm -f wp-content/uploads/*-768x*.bmp
+rm -f wp-content/uploads/*-768x*.tif
+rm -f wp-content/uploads/*-768x*.jpe
 rm -f wp-content/uploads/*-768x*.JPG
 rm -f wp-content/uploads/*-768x*.PNG
 rm -f wp-content/uploads/*-768x*.GIF
 rm -f wp-content/uploads/*-768x*.JPEG
+rm -f wp-content/uploads/*-768x*.BMP
+rm -f wp-content/uploads/*-768x*.TIF
+rm -f wp-content/uploads/*-768x*.JPE
