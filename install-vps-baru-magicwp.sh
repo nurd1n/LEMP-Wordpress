@@ -49,6 +49,9 @@ easy_install mechanize
 easy_install BeautifulSoup4
 #install names
 pip install names
+#install firefox
+sudo apt-get update
+sudo apt-get firefox
 cd /
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/nginx.conf -o deletenginx.conf
 echo "$(cat deletenginx.conf)" > /etc/nginx/nginx.conf
