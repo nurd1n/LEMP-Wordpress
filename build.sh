@@ -23,7 +23,6 @@ names | sed 's| ||g' | tr A-Z a-z > /deleteissac
 names | sed 's| ||g' | tr A-Z a-z > /deletesamantha
 names | sed 's| ||g' | tr A-Z a-z > /deleteturner
 echo "http://www.$(cat /deletedomain).$(cat /deleteekstension)/$(cat /deletekeyword | sed 's/ /-/g') : $(cat /delete-author)" >> /home/usernames.txt
-echo "$(cat /deletekeyword | sed 's/ /-/g');$(cat /deletekeyword | sed -e 's/.*/\L&/; s/[a-z]*/\u&/g' -e 's/ /<SP>/g');$(cat /delete-author)" >> /root/iMacros/Datasources/magicwp.csv
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-comment
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-colophon
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /delete-content
@@ -195,6 +194,9 @@ echo "chmod 777 /home/www/$(cat /deletedomain)$(cat /deleteekstension)/$(cat /de
 # Template
 echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/template1.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' -e 's/keyword1/$(cat /deletekeyword | sed 's/ /-/g')/g' -e 's/gallery/$(cat /delete-gallery)/g' -e 's/video-container/$(cat /delete-video)-container/g' >  /home/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html" | bash -
 echo "cp /home/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html /var/www/html/template/$(cat /deletedomain)-$(cat /deleteekstension)-$(cat /deletekeyword | sed 's/ /-/g').html" | bash -
+# Data Imacros
+echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/magicwp/template1.html | sed -e 's/domain/$(cat /deletedomain)/g' -e 's/ekstension/$(cat /deleteekstension)/g' -e 's/keyword1/$(cat /deletekeyword | sed 's/ /-/g')/g' -e 's/gallery/$(cat /delete-gallery)/g' -e 's/video-container/$(cat /delete-video)-container/g' >  /deleteimacros" | bash -
+echo "$(cat /deletekeyword | sed 's/ /-/g'){$(cat /deletekeyword | sed -e 's/.*/\L&/; s/[a-z]*/\u&/g' -e 's/ /<SP>/g'){$(cat /delete-author){$(cat /deleteimacros | sed 's/ /<SP>/g' | awk 1 ORS='<BR>' | sed 's/<BR><BR>/{/g')" >> /root/iMacros/Datasources/magicwp.csv
 # Untuk data clone
 mkdir -p /home/clone2
 cat /deletedomain >> /home/clone2/domainawal
