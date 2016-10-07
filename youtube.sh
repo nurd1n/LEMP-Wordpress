@@ -1,8 +1,9 @@
 cd /
 clear && clear
 #install x2go
-sudo apt-get install apt-transport-https
 apt-get update && apt-get -y install aptitude
+sudo apt-get install apt-transport-https
+apt-get install openssl
 apt-get install gawk python-setuptools software-properties-common
 sudo add-apt-repository ppa:x2go/stable
 apt-get update
@@ -22,5 +23,4 @@ cd /tmp/utorrent* && unzip ./webui.zip
 sudo su
 chown -R root:root /tmp/utorrent*
 mv /tmp/utorrent* /opt/utorrent
-apt-get install openssl
 cd /opt/utorrent && sudo ./utserver
