@@ -14,6 +14,8 @@ sudo apt-get install at ffmpeg midori firefox bleachbit gedit terminator filezil
 #install mechanize & beautifulsoup
 easy_install mechanize
 easy_install BeautifulSoup4
+#install youtube-dl
+pip install youtube-dl
 #install names
 pip install names
 #install Utorrent
