@@ -27,8 +27,10 @@ pip install names
 #install Utorrent
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/utserver.tar.gz -o utserver.tar.gz
 tar xvzf utserver.tar.gz -C /tmp/
-cd /tmp/utorrent* && unzip ./webui.zip
+cd /tmp/utorrent*
+unzip ./webui.zip
 sudo su
 chown -R root:root /tmp/utorrent*
 mv /tmp/utorrent* /opt/utorrent
-cd /opt/utorrent && sudo ./utserver
+cd /opt/utorrent
+sudo ./utserver
