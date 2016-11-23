@@ -1,5 +1,7 @@
 cd /
 clear && clear
+#create password
+passwd
 #install x2go
 apt-get update && apt-get -y install aptitude
 sudo apt-get install apt-transport-https
