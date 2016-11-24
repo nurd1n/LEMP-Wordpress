@@ -21,7 +21,8 @@ pip install youtube-dl
 #install chrome
 cd /tmp
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb; sudo apt-get -f install
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt-get -f install
 #install names
 pip install names
 #install Utorrent
