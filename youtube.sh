@@ -25,6 +25,13 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt-get -f install
 #install names
 pip install names
+#install youtube-upload
+pip install --upgrade google-api-python-client progressbar2
+curl -L https://github.com/tokland/youtube-upload/archive/master.zip -o master.zip
+unzip master.zip
+cd youtube-upload-master
+python setup.py install
+cd /tmp
 #install Utorrent
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/utserver.tar.gz -o utserver.tar.gz
 tar xvzf utserver.tar.gz -C /tmp/
