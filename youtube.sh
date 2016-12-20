@@ -18,6 +18,22 @@ easy_install mechanize
 easy_install BeautifulSoup4
 #install youtube-dl
 pip install youtube-dl
+#folder upload
+mkdir /root/upload
+cd /root/upload
+touch start.txt
+curl https://github.com/nurd1n/LEMP-Wordpress/raw/secret/youtube-start.sh -o start.sh
+mkdir data
+mkdir data/description
+mkdir data/thumbnail
+touch data/url
+touch data/title
+touch data/tags
+touch data/privacy
+touch data/playlist
+mkdir secret
+touch secret/client.json
+touch secret/channel.json
 #install chrome
 cd /tmp
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
