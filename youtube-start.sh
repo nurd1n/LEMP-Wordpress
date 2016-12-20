@@ -1,7 +1,7 @@
 while read f1; do
 
 	# download video
-	echo "$(sed -n '$f1' < data/title)" >> report.txt
+	echo "sed -n '$f1' < data/title" | bash - >> report.txt
 	echo "echo \"youtube-dl -f 22 \$(sed -n '$f1' < data/url) -o delete.mp4\"" | bash - | bash -
 
 	# upload video
