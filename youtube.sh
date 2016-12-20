@@ -21,7 +21,7 @@ pip install youtube-dl
 #folder upload
 mkdir /root/upload
 cd /root/upload
-touch start.txt
+echo "1p" > start.txt
 curl https://github.com/nurd1n/LEMP-Wordpress/raw/secret/youtube-start.sh -o start.sh
 mkdir data
 mkdir data/description
