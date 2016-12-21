@@ -42,6 +42,9 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt-get -f install
 #install names
 pip install names
+#ubah fonts
+sudo apt-get install fonts-vlgothic
+sudo fc-cache -f -v
 #install youtube-upload
 pip install --upgrade google-api-python-client progressbar2
 curl -L https://github.com/tokland/youtube-upload/archive/master.zip -o master.zip
