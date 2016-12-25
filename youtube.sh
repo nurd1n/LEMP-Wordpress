@@ -17,7 +17,9 @@ sudo apt-get install at ffmpeg midori firefox bleachbit gedit terminator filezil
 easy_install mechanize
 easy_install BeautifulSoup4
 #install youtube-dl
-pip install youtube-dl
+pip install --upgrade youtube-dl
+#install git
+apt-get install git-all
 #folder upload
 mkdir /root/upload
 cd /root/upload
