@@ -26,6 +26,7 @@ cd /root/upload
 curl -L https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -o ffmpeg.tar.xz
 tar xf ffmpeg.tar.xz
 rm -f ffmpeg.tar.xz
+touch live.sh
 echo "1p" > start.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/youtube-start.sh -o start.sh
 chmod 755 *.sh
