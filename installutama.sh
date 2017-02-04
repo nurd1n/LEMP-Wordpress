@@ -39,20 +39,30 @@ cat /deleteekstension >> /home/clone2/ekstensionawal
 cat /deleteinisial >> /home/clone2/inisialawal
 cat /deleteuserdb >> /home/clone2/userdbawal
 cat /deletepassdb >> /home/clone2/passdbawal
-#install x2go
-sudo apt-get install apt-transport-https
+#install x2go lama
+#sudo apt-get install apt-transport-https
+#apt-get update && apt-get -y install aptitude
+#apt-get install gawk python-setuptools software-properties-common
+#echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
+#echo "deb-src http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
+#curl https://repo.varnish-cache.org/ubuntu/GPG-key.txt | apt-key add - 
+#echo "deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-4.0" >> /etc/apt/sources.list.d/varnish-cache.list
+#apt-key adv --recv-keys --keyserver keys.gnupg.net E1F958385BFE2B6E
+#apt-get update
+#apt-get upgrade
+#apt-get dist-upgrade
+#aptitude update && aptitude install x2go-keyring
+#aptitude install x2goserver
+#apt-get install xorg lxde-core
+
+#install x2go baru
 apt-get update && apt-get -y install aptitude
+sudo apt-get install apt-transport-https
+apt-get install openssl
 apt-get install gawk python-setuptools software-properties-common
-echo "deb http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
-echo "deb-src http://packages.x2go.org/debian squeeze main" >> /etc/apt/sources.list
-curl https://repo.varnish-cache.org/ubuntu/GPG-key.txt | apt-key add - 
-echo "deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-4.0" >> /etc/apt/sources.list.d/varnish-cache.list
-apt-key adv --recv-keys --keyserver keys.gnupg.net E1F958385BFE2B6E
+sudo add-apt-repository ppa:x2go/stable
 apt-get update
-apt-get upgrade
-apt-get dist-upgrade
-aptitude update && aptitude install x2go-keyring
-aptitude install x2goserver
+sudo apt-get install x2goserver x2goserver-xsession
 apt-get install xorg lxde-core
 #install nginx
 sudo -s
@@ -78,7 +88,8 @@ sudo apt-get install mariadb-server mariadb-client
 service mysql restart
 mysql_secure_installation
 #install yg diperlukan
-sudo apt-get install at sendmail ffmpeg midori bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip varnish
+sudo apt-get install ffmpeg
+sudo apt-get install at sendmail midori bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip varnish
 #install mechanize & beautifulsoup
 easy_install mechanize
 easy_install BeautifulSoup4
@@ -164,7 +175,7 @@ wp widget delete $(wp widget list sidebar-1 --format=ids --allow-root) --allow-r
 wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) --allow-root
 #install & activate theme
 printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1 > /deletetheme
-echo "curl -L http://moviestreamfullhd.com/theme/$(cat /deletetheme).zip -o /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletetheme).zip" | bash -
+echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/theme/$(cat /deletetheme).zip -o /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletetheme).zip" | bash -
 eval $(echo "cd /home/www/$(cat /deletedomain)/wp-content/themes")
 echo "unzip $(cat /deletetheme)" | bash -
 echo "rm -f $(cat /deletetheme).zip" | bash -
@@ -222,10 +233,14 @@ wp plugin install google-sitemap-generator --activate --allow-root
 wp plugin install nginx-helper --activate --allow-root
 wp plugin install nginx-compatibility --activate --allow-root
 wp plugin install wp-seo-html-sitemap --activate --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --activate --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/wp-freshstart.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip -o /all-in-one-seo-pack-pro-v2.3.7.2.zip
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/no-ping-wait_2.zip -o /no-ping-wait_2.zip
+culr -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/wp-freshstart.zip -o /wp-freshstart.zip
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/wp-all-import-pro.zip -o /wp-all-import-pro.zip
+wp plugin install /all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
+wp plugin install /no-ping-wait_2.zip --activate --allow-root
+wp plugin install /wp-freshstart.zip --activate  --allow-root
+wp plugin install /wp-all-import-pro.zip --activate  --allow-root
 wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate  --allow-root
 #random plugin
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /deletenameplugin
@@ -243,6 +258,6 @@ rm -f extra.sh
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/aiopluginsetting.ini -o /home/aiopluginsetting.ini
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wpallimport.txt -o /home/wpallimport.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o /home/wordpressping.txt
-curl -L http://moviestreamfullhd.com/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
 echo "chmod 777 /home/www/$(cat /deletedomain)/wp-content" | bash -
