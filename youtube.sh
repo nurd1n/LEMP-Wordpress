@@ -14,8 +14,8 @@ apt-get install xorg lxde-core
 #install yg diperlukan
 sudo apt-get install at ffmpeg midori firefox bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip
 #install mechanize & beautifulsoup
-easy_install mechanize
-easy_install BeautifulSoup4
+pip install --upgrade mechanize
+pip install --upgrade BeautifulSoup4
 #install youtube-dl
 pip install --upgrade youtube-dl
 #install git
@@ -23,9 +23,12 @@ apt-get install git-all
 #folder upload
 mkdir /root/upload
 cd /root/upload
-curl -L https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -o ffmpeg.tar.xz
-tar xf ffmpeg.tar.xz
-rm -f ffmpeg.tar.xz
+wget -q --no-check-certificate https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz
+tar xf ffmpeg-release-64bit-static.tar.xz
+mv ffmpeg-3.2.2-64bit-static ffmpeg-tool
+rm -f ffmpeg-release-64bit-static.tar.xz
+cp ffmpeg-tool/ffmpeg /usr/bin/ffmpeg2
+cp ffmpeg-tool/ffprobe /usr/bin/ffprobe2
 touch live.sh
 echo "1p" > start.txt
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/youtube-start.sh -o start.sh
@@ -41,6 +44,9 @@ touch data/playlist
 mkdir secret
 touch secret/client.json
 touch secret/channel.json
+#clone xoxo
+cd /root
+git clone -b master https://github.com/nurd1n/Xoxo && cd Xoxo && chmod 755 *.sh
 #install chrome
 cd /tmp
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
