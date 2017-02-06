@@ -13,7 +13,8 @@ sudo apt-get update
 sudo apt-get install x2goserver x2goserver-xsession
 sudo apt-get install xorg lxde-core
 #install yg diperlukan
-sudo apt-get install at ffmpeg midori firefox bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip
+sudo apt-get install at ffmpeg midori firefox bleachbit gedit terminator filezilla libimage-exiftool-perl unzip
+easy_install pip
 #install mechanize & beautifulsoup
 pip install --upgrade mechanize
 pip install --upgrade BeautifulSoup4
