@@ -1,7 +1,7 @@
 cd /
 clear && clear
 #create password
-passwd
+#passwd
 #install x2go
 sudo apt-get update
 sudo apt-get -y install aptitude
