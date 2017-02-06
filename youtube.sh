@@ -3,14 +3,15 @@ clear && clear
 #create password
 passwd
 #install x2go
-apt-get update && apt-get -y install aptitude
+sudo apt-get update
+sudo apt-get -y install aptitude
 sudo apt-get install apt-transport-https
-apt-get install openssl
-apt-get install gawk python-setuptools software-properties-common
+sudo apt-get install openssl
+sudo apt-get install gawk python-setuptools software-properties-common
 sudo add-apt-repository ppa:x2go/stable
-apt-get update
+sudo apt-get update
 sudo apt-get install x2goserver x2goserver-xsession
-apt-get install xorg lxde-core
+sudo apt-get install xorg lxde-core
 #install yg diperlukan
 sudo apt-get install at ffmpeg midori firefox bleachbit gedit terminator filezilla libimage-exiftool-perl unzip python-pip
 #install mechanize & beautifulsoup
@@ -19,7 +20,7 @@ pip install --upgrade BeautifulSoup4
 #install youtube-dl
 pip install --upgrade youtube-dl
 #install git
-apt-get install git-all
+sudo apt-get install git-all
 #folder upload
 mkdir /root/upload
 cd /root/upload
