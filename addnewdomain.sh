@@ -49,7 +49,7 @@ sudo service nginx restart; sudo service php5-fpm restart; service mysql restart
 # Install Wordpress and Configure the Database
 eval $(echo "cd /home/www/$(cat /deletedomain)")
 # Install wordpress terbaru
-wp core download --version=4.5 --allow-root
+wp core download --version=4.7.3 --allow-root
 chown -R www-data:www-data *
 # Create database, ganti password, wordpressdb
 echo "echo \"echo \\\"create database wp_\$(cat /deletedomain); create user \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; grant all privileges on wp_\$(cat /deletedomain).* to \$(cat /deleteuserdb)@localhost identified by '\$(cat /deletepassdb)'; flush privileges\\\" | mysql -u root \\\"-p\$(cat /deletepassmysql)\\\"\"" | bash - | bash -
@@ -75,7 +75,7 @@ wp widget delete $(wp widget list sidebar-1 --format=ids --allow-root) --allow-r
 wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) --allow-root
 #install & activate theme
 printf "Rosas\nRoses\nRosis\nRosus\nRosos" | shuf -n 1 > /deletetheme
-echo "curl -L http://moviestreamfullhd.com/theme/$(cat /deletetheme).zip -o /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletetheme).zip" | bash -
+echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/theme/$(cat /deletetheme).zip -o /home/www/$(cat /deletedomain)/wp-content/themes/$(cat /deletetheme).zip" | bash -
 eval $(echo "cd /home/www/$(cat /deletedomain)/wp-content/themes")
 echo "unzip $(cat /deletetheme)" | bash -
 echo "rm -f $(cat /deletetheme).zip" | bash -
@@ -133,10 +133,14 @@ wp plugin install google-sitemap-generator --activate --allow-root
 wp plugin install nginx-helper --allow-root
 wp plugin install nginx-compatibility --activate --allow-root
 wp plugin install wp-seo-html-sitemap --activate --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/no-ping-wait_2.zip --activate --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/wp-freshstart.zip --activate  --allow-root
-wp plugin install http://moviestreamfullhd.com/plugin/wp-all-import-pro.zip --activate  --allow-root
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip -o /all-in-one-seo-pack-pro-v2.3.7.2.zip
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/no-ping-wait_2.zip -o /no-ping-wait_2.zip
+culr -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/wp-freshstart.zip -o /wp-freshstart.zip
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/wp-all-import-pro.zip -o /wp-all-import-pro.zip
+wp plugin install /all-in-one-seo-pack-pro-v2.3.7.2.zip --activate  --allow-root
+wp plugin install /no-ping-wait_2.zip --activate --allow-root
+wp plugin install /wp-freshstart.zip --activate  --allow-root
+wp plugin install /wp-all-import-pro.zip --activate  --allow-root
 wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate  --allow-root
 #random plugin
 tr -cd '[:alpha:]' < /dev/urandom | fold -w10 | head -n1 | tr A-Z a-z > /deletenameplugin
