@@ -90,6 +90,7 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/wp-all-import
 wp plugin install /no-ping-wait_2.zip --activate --allow-root
 wp plugin install /wp-freshstart.zip --activate  --allow-root
 wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate  --allow-root
+eval $(echo "cd /home/www/$(cat /deletedomain)")
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
 #buat page
