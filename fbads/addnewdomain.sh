@@ -67,7 +67,11 @@ wp widget delete $(wp widget list sidebar-1 --format=ids --allow-root) --allow-r
 #Delete inactive plugins
 wp plugin delete $(wp plugin list --status=inactive --field=name --allow-root) --allow-root
 #install & activate theme superfast
-wp theme install https://github.com/nurd1n/LEMP-Wordpress/raw/secret/theme/superfast.zip --activate --allow-root
+echo "curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/theme/superfast.zip -o /home/www/$(cat /deletedomain)/wp-content/themes/superfast.zip" | bash -
+eval $(echo "cd /home/www/$(cat /deletedomain)/wp-content/themes")
+echo "unzip superfast" | bash -
+echo "rm -f superfast.zip" | bash -
+wp theme activate superfast --allow-root
 #delete theme unactive
 wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --allow-root
 #install plugin
