@@ -81,7 +81,7 @@ wp plugin install wordpress-ping-optimizer --activate --allow-root
 wp plugin install akismet --activate --allow-root
 wp plugin install wp-limit-login-attempts --activate --allow-root
 wp plugin install google-sitemap-generator --activate --allow-root
-wp plugin install nginx-helper --allow-root
+wp plugin install nginx-helper --activate --allow-root
 wp plugin install wp-seo-html-sitemap --activate --allow-root
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip -o /all-in-one-seo-pack-pro-v2.3.7.2.zip
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/no-ping-wait_2.zip -o /no-ping-wait_2.zip
