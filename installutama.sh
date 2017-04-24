@@ -261,3 +261,22 @@ curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/wordpressping.txt -o
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/license-agc-spinner.txt -o /home/license-agc-spinner.txt
 echo "chmod 777 /home/www/$(cat /deletedomain)" | bash -
 echo "chmod 777 /home/www/$(cat /deletedomain)/wp-content" | bash -
+# download & install ioncube
+cd /var/www/html
+sudo wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+sudo tar xzf ioncube_loaders_lin_x86-64.tar.gz
+shred -v -n 25 -u -z ioncube_loaders_lin_x86-64.tar.gz
+echo "cp /var/www/html/ioncube/ioncube_loader_lin_5.6.so $(find /usr/lib/php5/20* -type d -maxdepth 0)/ioncube_loader_lin_5.6.so" | bash -
+echo "zend_extension = $(find /usr/lib/php5/20* -type d -maxdepth 0)/ioncube_loader_lin_5.6.so" >> /etc/php5/fpm/php.ini
+rm -rf /var/www/html/ioncube*
+# download phpmyadmin
+mkdir -p phpmyadmin
+cd phpmyadmin
+sudo wget https://files.phpmyadmin.net/phpMyAdmin/4.6.3/phpMyAdmin-4.6.3-all-languages.tar.gz
+tar -zxvf phpMyAdmin-4.6.3-all-languages.tar.gz
+sudo mv phpMyAdmin-4.6.3*/* .
+sudo rm phpMyAdmin-4.6.3-all-languages.tar.gz
+sudo chown -R www-data:www-data /var/www/html/phpmyadmin
+cd /
+sudo service nginx restart; sudo service php5-fpm restart
+clear
