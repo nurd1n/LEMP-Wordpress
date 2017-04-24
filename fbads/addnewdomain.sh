@@ -32,7 +32,7 @@ echo -n "Apa email wordpress yg diinginkan :
 "
 read emailwp
 echo "$emailwp" > deleteemailwp; clear
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block -o deleteblock
+curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/block2 -o deleteblock
 #get ip adress
 curl -s http://ipv4.icanhazip.com > deleteipadress
 echo "cat deleteblock | sed -e 's/domain/$(cat deletedomain)/g' -e 's/ekstension/$(cat deleteekstension)/g' -e 's/ipadress/$(cat deleteipadress)/g' > /etc/nginx/sites-available/$(cat deletedomain).$(cat deleteekstension)" | bash -
