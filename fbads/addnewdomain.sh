@@ -74,23 +74,25 @@ echo "rm -f superfast.zip" | bash -
 wp theme activate superfast --allow-root
 #delete theme unactive
 wp theme delete $(wp theme list --status=inactive --field=name --allow-root) --allow-root
+#update theme
+wp theme update --all --allow-root
 #install plugin
 wp plugin install advanced-ads --activate --allow-root
 wp plugin install adsense-privacy-policy --activate --allow-root
-wp plugin install wordpress-ping-optimizer --activate --allow-root
+#wp plugin install wordpress-ping-optimizer --activate --allow-root
 wp plugin install akismet --activate --allow-root
-wp plugin install wp-limit-login-attempts --activate --allow-root
-wp plugin install google-sitemap-generator --activate --allow-root
-wp plugin install jetpack --activate --allow-root
-wp plugin install nginx-helper --activate --allow-root
+#wp plugin install wp-limit-login-attempts --activate --allow-root
+#wp plugin install google-sitemap-generator --activate --allow-root
+#wp plugin install jetpack --activate --allow-root
+#wp plugin install nginx-helper --activate --allow-root
 wp plugin install wp-seo-html-sitemap --activate --allow-root
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip -o /all-in-one-seo-pack-pro-v2.3.7.2.zip
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/no-ping-wait_2.zip -o /no-ping-wait_2.zip
+#curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/all-in-one-seo-pack-pro-v2.3.7.2.zip -o /all-in-one-seo-pack-pro-v2.3.7.2.zip
+#curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/no-ping-wait_2.zip -o /no-ping-wait_2.zip
 curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/wp-freshstart.zip -o /wp-freshstart.zip
-curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/wp-all-import-pro.zip -o /wp-all-import-pro.zip
-wp plugin install /no-ping-wait_2.zip --activate --allow-root
+#curl -L https://github.com/nurd1n/LEMP-Wordpress/raw/secret/plugin/wp-all-import-pro.zip -o /wp-all-import-pro.zip
+#wp plugin install /no-ping-wait_2.zip --activate --allow-root
 wp plugin install /wp-freshstart.zip --activate  --allow-root
-wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate  --allow-root
+#wp plugin install https://github.com/pkhamre/wp-varnish/archive/master.zip --activate  --allow-root
 eval $(echo "cd /home/www/$(cat /deletedomain)")
 chown -R www-data:www-data *
 wp plugin update --all --allow-root
