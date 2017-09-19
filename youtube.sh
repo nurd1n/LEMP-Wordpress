@@ -27,6 +27,7 @@ mkdir /root/upload
 cd /root/upload
 wget -q --no-check-certificate https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz
 tar xf ffmpeg-release-64bit-static.tar.xz
+rm -f *.tar.xz
 mv ffmpeg* ffmpeg-tool
 cp ffmpeg-tool/ffmpeg /usr/bin/ffmpeg2
 cp ffmpeg-tool/ffprobe /usr/bin/ffprobe2
